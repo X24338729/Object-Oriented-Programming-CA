@@ -29,26 +29,82 @@ public class SavingsReportGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         backBtn = new javax.swing.JButton();
+        titleLbl = new javax.swing.JLabel();
+        rateLbl = new javax.swing.JLabel();
+        rateTF = new javax.swing.JTextField();
+        generateBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        reportTA = new javax.swing.JTextArea();
+        saveFileBtn = new javax.swing.JButton();
+        loadFileBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         backBtn.setText("Back");
         backBtn.addActionListener(this::backBtnActionPerformed);
 
+        titleLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titleLbl.setText("Savings Report");
+
+        rateLbl.setText("Electricity Rate (e/kWh):");
+
+        generateBtn.setText("Genereate Report");
+
+        reportTA.setColumns(20);
+        reportTA.setRows(5);
+        jScrollPane1.setViewportView(reportTA);
+
+        saveFileBtn.setText("Save to File");
+
+        loadFileBtn.setText("Load From File");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(backBtn)
-                .addContainerGap(322, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(backBtn)
+                        .addGap(84, 84, 84)
+                        .addComponent(saveFileBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(loadFileBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(rateLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(generateBtn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(titleLbl)
+                        .addGap(131, 131, 131))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(271, Short.MAX_VALUE)
-                .addComponent(backBtn)
+                .addComponent(titleLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rateLbl)
+                    .addComponent(rateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(generateBtn))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backBtn)
+                    .addComponent(saveFileBtn)
+                    .addComponent(loadFileBtn))
                 .addContainerGap())
         );
 
@@ -87,5 +143,13 @@ public class SavingsReportGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton generateBtn;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton loadFileBtn;
+    private javax.swing.JLabel rateLbl;
+    private javax.swing.JTextField rateTF;
+    private javax.swing.JTextArea reportTA;
+    private javax.swing.JButton saveFileBtn;
+    private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables
 }

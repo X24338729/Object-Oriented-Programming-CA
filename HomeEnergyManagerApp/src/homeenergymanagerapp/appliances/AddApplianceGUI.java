@@ -28,12 +28,66 @@ public class AddApplianceGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        typeBG = new javax.swing.ButtonGroup();
         backBtn = new javax.swing.JButton();
+        nameLbl = new javax.swing.JLabel();
+        nameTF = new javax.swing.JTextField();
+        roomLbl = new javax.swing.JLabel();
+        roomTF = new javax.swing.JTextField();
+        wattsLbl = new javax.swing.JLabel();
+        wattsTF = new javax.swing.JTextField();
+        hoursTF = new javax.swing.JTextField();
+        tempTF = new javax.swing.JTextField();
+        bulbTF = new javax.swing.JTextField();
+        bulbsTF = new javax.swing.JTextField();
+        hoursLbl = new javax.swing.JLabel();
+        typeLbl = new javax.swing.JLabel();
+        tempLbl = new javax.swing.JLabel();
+        timerLbl = new javax.swing.JLabel();
+        bulbLbl = new javax.swing.JLabel();
+        bulbsLbl = new javax.swing.JLabel();
+        heatingRB = new javax.swing.JRadioButton();
+        lightingRB = new javax.swing.JRadioButton();
+        timerCB = new javax.swing.JCheckBox();
+        saveBtn = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
+        titleLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         backBtn.setText("Back");
         backBtn.addActionListener(this::backBtnActionPerformed);
+
+        nameLbl.setText("Name");
+
+        roomLbl.setText("Room");
+
+        wattsLbl.setText("Watts");
+
+        hoursLbl.setText("Hours Per Day");
+
+        typeLbl.setText("Type");
+
+        tempLbl.setText("Target Temp");
+
+        timerLbl.setText("Has Timer");
+
+        bulbLbl.setText("Bulb Type");
+
+        bulbsLbl.setText("Number of Bulbs");
+
+        typeBG.add(heatingRB);
+        heatingRB.setText("Heating");
+
+        typeBG.add(lightingRB);
+        lightingRB.setText("Lighting");
+
+        saveBtn.setText("Save");
+
+        clearBtn.setText("Clear");
+
+        titleLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titleLbl.setText("Add Appliance");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -41,14 +95,99 @@ public class AddApplianceGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(backBtn)
-                .addContainerGap(322, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(backBtn)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(roomLbl)
+                            .addComponent(nameLbl))
+                        .addComponent(hoursLbl)
+                        .addComponent(wattsLbl))
+                    .addComponent(typeLbl, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lightingRB)
+                            .addComponent(heatingRB))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(clearBtn)
+                            .addComponent(saveBtn)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(roomTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(timerLbl))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(wattsTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bulbLbl))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(hoursTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                .addComponent(bulbsLbl)
+                                .addGap(6, 6, 6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tempLbl)))
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tempTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bulbTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bulbsTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(timerCB))))
+                .addGap(32, 32, 32))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(titleLbl)
+                .addGap(133, 133, 133))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(271, Short.MAX_VALUE)
-                .addComponent(backBtn)
+                .addComponent(titleLbl)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameLbl)
+                    .addComponent(tempTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tempLbl))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(roomTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(roomLbl)
+                        .addComponent(timerLbl))
+                    .addComponent(timerCB))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(wattsTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(wattsLbl)
+                    .addComponent(bulbTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bulbLbl))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hoursLbl)
+                    .addComponent(hoursTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bulbsLbl)
+                    .addComponent(bulbsTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(heatingRB)
+                    .addComponent(typeLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lightingRB)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(saveBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backBtn)
+                    .addComponent(clearBtn))
                 .addContainerGap())
         );
 
@@ -87,5 +226,28 @@ public class AddApplianceGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JLabel bulbLbl;
+    private javax.swing.JTextField bulbTF;
+    private javax.swing.JLabel bulbsLbl;
+    private javax.swing.JTextField bulbsTF;
+    private javax.swing.JButton clearBtn;
+    private javax.swing.JRadioButton heatingRB;
+    private javax.swing.JLabel hoursLbl;
+    private javax.swing.JTextField hoursTF;
+    private javax.swing.JRadioButton lightingRB;
+    private javax.swing.JLabel nameLbl;
+    private javax.swing.JTextField nameTF;
+    private javax.swing.JLabel roomLbl;
+    private javax.swing.JTextField roomTF;
+    private javax.swing.JButton saveBtn;
+    private javax.swing.JLabel tempLbl;
+    private javax.swing.JTextField tempTF;
+    private javax.swing.JCheckBox timerCB;
+    private javax.swing.JLabel timerLbl;
+    private javax.swing.JLabel titleLbl;
+    private javax.swing.ButtonGroup typeBG;
+    private javax.swing.JLabel typeLbl;
+    private javax.swing.JLabel wattsLbl;
+    private javax.swing.JTextField wattsTF;
     // End of variables declaration//GEN-END:variables
 }

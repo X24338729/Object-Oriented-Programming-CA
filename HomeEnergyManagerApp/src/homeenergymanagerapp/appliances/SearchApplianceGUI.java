@@ -28,26 +28,87 @@ public class SearchApplianceGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        searchBG = new javax.swing.ButtonGroup();
         backBtn = new javax.swing.JButton();
+        titleLbl = new javax.swing.JLabel();
+        searchByLbl = new javax.swing.JLabel();
+        nameRB = new javax.swing.JRadioButton();
+        roomRB = new javax.swing.JRadioButton();
+        searchTF = new javax.swing.JTextField();
+        searchBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        resultTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         backBtn.setText("Back");
         backBtn.addActionListener(this::backBtnActionPerformed);
 
+        titleLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titleLbl.setText("Search Appliance");
+
+        searchByLbl.setText("Search by:");
+
+        searchBG.add(nameRB);
+        nameRB.setText("Name");
+
+        searchBG.add(roomRB);
+        roomRB.setText("Room");
+
+        searchTF.addActionListener(this::searchTFActionPerformed);
+
+        searchBtn.setText("Search");
+
+        resultTA.setColumns(20);
+        resultTA.setRows(5);
+        jScrollPane1.setViewportView(resultTA);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(titleLbl)
+                .addGap(125, 125, 125))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(backBtn)
-                .addContainerGap(322, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(searchByLbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(nameRB))
+                            .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(roomRB)
+                            .addComponent(searchBtn)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(271, Short.MAX_VALUE)
+                .addComponent(titleLbl)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchByLbl)
+                    .addComponent(nameRB)
+                    .addComponent(roomRB))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchBtn))
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addComponent(backBtn)
                 .addContainerGap())
         );
@@ -59,6 +120,10 @@ public class SearchApplianceGUI extends javax.swing.JFrame {
     new ApplianceMenuGUI().setVisible(true);
     this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void searchTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,5 +152,14 @@ public class SearchApplianceGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton nameRB;
+    private javax.swing.JTextArea resultTA;
+    private javax.swing.JRadioButton roomRB;
+    private javax.swing.ButtonGroup searchBG;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JLabel searchByLbl;
+    private javax.swing.JTextField searchTF;
+    private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables
 }

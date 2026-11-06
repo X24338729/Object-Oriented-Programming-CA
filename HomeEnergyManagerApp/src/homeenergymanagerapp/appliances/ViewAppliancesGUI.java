@@ -29,11 +29,31 @@ public class ViewAppliancesGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         backBtn = new javax.swing.JButton();
+        titleLbl = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        displayTA = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        deleteTF = new javax.swing.JTextField();
+        displayBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         backBtn.setText("Back");
         backBtn.addActionListener(this::backBtnActionPerformed);
+
+        titleLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titleLbl.setText("View / Delete Appliances");
+
+        displayTA.setColumns(20);
+        displayTA.setRows(5);
+        jScrollPane1.setViewportView(displayTA);
+
+        jLabel1.setText("Appliance Name:");
+
+        displayBtn.setText("Display All");
+
+        deleteBtn.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -42,13 +62,41 @@ public class ViewAppliancesGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(backBtn)
-                .addContainerGap(322, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(displayBtn)
+                .addGap(18, 18, 18)
+                .addComponent(deleteBtn)
+                .addGap(26, 26, 26))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(deleteTF, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(titleLbl))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(271, Short.MAX_VALUE)
-                .addComponent(backBtn)
+                .addComponent(titleLbl)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(deleteTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backBtn)
+                    .addComponent(displayBtn)
+                    .addComponent(deleteBtn))
                 .addContainerGap())
         );
 
@@ -87,5 +135,12 @@ public class ViewAppliancesGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JTextField deleteTF;
+    private javax.swing.JButton displayBtn;
+    private javax.swing.JTextArea displayTA;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel titleLbl;
     // End of variables declaration//GEN-END:variables
 }
