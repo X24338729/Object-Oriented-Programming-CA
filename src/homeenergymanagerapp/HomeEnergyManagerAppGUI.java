@@ -82,6 +82,7 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SavingApp_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavingApp_buttonActionPerformed
