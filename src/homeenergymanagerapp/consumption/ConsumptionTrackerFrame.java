@@ -1,5 +1,6 @@
 package consumption;
 
+import homeenergymanagerapp.HomeEnergyManagerApp;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -13,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 public class ConsumptionTrackerFrame extends JFrame {
     private final BillManager manager = new BillManager();
     private YearMonth shownMonth; // null means show every bill
+    private final JFrame menu;    // the main menu that opened this window, or null if it runs alone
 
     private final JComboBox<String> typeBox = new JComboBox<>(
             new String[]{ElectricityBill.TYPE_NAME, GasBill.TYPE_NAME});
@@ -32,7 +34,14 @@ public class ConsumptionTrackerFrame extends JFrame {
 
     private final JTable table = new JTable(tableModel);
 
+    // Runs on its own, with no menu behind it.
     public ConsumptionTrackerFrame() {
+        this(null);
+    }
+
+    // The menu is passed in so the Return to menu button can bring it back.
+    public ConsumptionTrackerFrame(JFrame menu) {
+        this.menu = menu;
         setTitle("WattWise - Energy Consumption Tracker");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 520);
@@ -41,6 +50,7 @@ public class ConsumptionTrackerFrame extends JFrame {
 
         add(buildInputPanel(), BorderLayout.NORTH);
         add(buildTablePanel(), BorderLayout.CENTER);
+        add(buildBottomPanel(), BorderLayout.SOUTH);
 
         refreshTable();
     }
@@ -93,6 +103,21 @@ public class ConsumptionTrackerFrame extends JFrame {
         tablePanel.add(searchPanel, BorderLayout.NORTH);
         tablePanel.add(new JScrollPane(table), BorderLayout.CENTER);
         return tablePanel;
+    }
+
+    private JPanel buildBottomPanel() {
+        JButton returnButton = new JButton("Return to menu");
+        returnButton.addActionListener(e -> returnToMenu());
+
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        bottomPanel.add(returnButton);
+        return bottomPanel;
+    }
+
+    private void returnToMenu() {
+        HomeEnergyManagerApp homeEnergyManagerApp = new HomeEnergyManagerApp();
+        homeEnergyManagerApp.startGUI();
+        this.dispose();
     }
 
     private void addBill() {
