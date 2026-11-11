@@ -34,41 +34,38 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
         WattWiseApp_button = new javax.swing.JButton();
         SavingApp_button = new javax.swing.JButton();
         CleanEnergyApp_button = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        WattWiseApp_button.setText("WattWiseApp");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        WattWiseApp_button.setBorder(null);
+        WattWiseApp_button.setBorderPainted(false);
+        WattWiseApp_button.setContentAreaFilled(false);
+        WattWiseApp_button.setFocusPainted(false);
+        WattWiseApp_button.setFocusable(false);
         WattWiseApp_button.addActionListener(this::WattWiseApp_buttonActionPerformed);
+        jPanel1.add(WattWiseApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 130, 120));
 
-        SavingApp_button.setText("SavingApp");
+        SavingApp_button.setBorder(null);
+        SavingApp_button.setBorderPainted(false);
+        SavingApp_button.setContentAreaFilled(false);
+        SavingApp_button.setFocusPainted(false);
+        SavingApp_button.setFocusable(false);
         SavingApp_button.addActionListener(this::SavingApp_buttonActionPerformed);
+        jPanel1.add(SavingApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 130, 120));
 
-        CleanEnergyApp_button.setText("CleanEnergyApp");
+        CleanEnergyApp_button.setBorder(null);
+        CleanEnergyApp_button.setBorderPainted(false);
+        CleanEnergyApp_button.setContentAreaFilled(false);
+        CleanEnergyApp_button.setFocusPainted(false);
+        CleanEnergyApp_button.setFocusable(false);
         CleanEnergyApp_button.addActionListener(this::CleanEnergyApp_buttonActionPerformed);
+        jPanel1.add(CleanEnergyApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 130, 120));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(WattWiseApp_button)
-                .addGap(49, 49, 49)
-                .addComponent(SavingApp_button)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addComponent(CleanEnergyApp_button)
-                .addGap(74, 74, 74))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(257, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(WattWiseApp_button)
-                    .addComponent(SavingApp_button)
-                    .addComponent(CleanEnergyApp_button))
-                .addGap(96, 96, 96))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mainMenu.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,7 +75,7 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -135,6 +132,7 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
     private javax.swing.JButton CleanEnergyApp_button;
     private javax.swing.JButton SavingApp_button;
     private javax.swing.JButton WattWiseApp_button;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
