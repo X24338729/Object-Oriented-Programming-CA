@@ -37,25 +37,26 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_label = new javax.swing.JLabel();
         CE_solar_panel_button = new javax.swing.JToggleButton();
         CE_wind_panel_button = new javax.swing.JToggleButton();
-        CE_heat_pump_button = new javax.swing.JToggleButton();
         CE_card_panel = new javax.swing.JPanel();
-        CE_wind_panel_card = new javax.swing.JPanel();
-        CE_solar_brands5 = new javax.swing.JComboBox<>();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        CE_solar_panel_card3 = new javax.swing.JPanel();
+        CE_solar_brands6 = new javax.swing.JComboBox<>();
+        jTextField33 = new javax.swing.JTextField();
+        jTextField34 = new javax.swing.JTextField();
+        jTextField35 = new javax.swing.JTextField();
+        jTextField36 = new javax.swing.JTextField();
+        jTextField37 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea7 = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
         CE_heat_pump_card = new javax.swing.JPanel();
         CE_solar_brands4 = new javax.swing.JComboBox<>();
         jTextField23 = new javax.swing.JTextField();
@@ -71,418 +72,263 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        CE_solar_panel_card3 = new javax.swing.JPanel();
-        CE_solar_brands3 = new javax.swing.JComboBox<>();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        CE_wind_panel_card = new javax.swing.JPanel();
+        CE_solar_brands7 = new javax.swing.JComboBox<>();
+        jTextField38 = new javax.swing.JTextField();
+        jTextField39 = new javax.swing.JTextField();
+        jTextField40 = new javax.swing.JTextField();
+        jTextField41 = new javax.swing.JTextField();
+        jTextField42 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        CE_heat_pump_button = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CE_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CE_back_button.setText("Back");
         CE_back_button.addActionListener(this::CE_back_buttonActionPerformed);
+        CE_panel.add(CE_back_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 9, 100, 35));
 
         CE_label.setText("Clean Energy App");
+        CE_panel.add(CE_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 6, -1, 41));
 
         CE_card_button_group.add(CE_solar_panel_button);
         CE_solar_panel_button.setSelected(true);
         CE_solar_panel_button.setText("Solar Panel");
         CE_solar_panel_button.addActionListener(this::CE_solar_panel_buttonActionPerformed);
+        CE_panel.add(CE_solar_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
 
         CE_card_button_group.add(CE_wind_panel_button);
         CE_wind_panel_button.setText("Wind Panel");
         CE_wind_panel_button.addActionListener(this::CE_wind_panel_buttonActionPerformed);
+        CE_panel.add(CE_wind_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+
+        CE_card_panel.setLayout(new java.awt.CardLayout());
+
+        CE_solar_panel_card3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CE_solar_brands6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CE_solar_panel_card3.add(CE_solar_brands6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+
+        jTextField33.setText("EX Solar");
+        jTextField33.addActionListener(this::jTextField33jTextField2ActionPerformed);
+        CE_solar_panel_card3.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, -1));
+
+        jTextField34.setText("EX Solar");
+        jTextField34.addActionListener(this::jTextField34jTextField5ActionPerformed);
+        CE_solar_panel_card3.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 90, -1));
+
+        jTextField35.setText("EX Solar");
+        jTextField35.addActionListener(this::jTextField35jTextField6ActionPerformed);
+        CE_solar_panel_card3.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 90, -1));
+
+        jTextField36.setText("EX Solar");
+        jTextField36.addActionListener(this::jTextField36ActionPerformed);
+        CE_solar_panel_card3.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 90, -1));
+
+        jTextField37.setText("EX Solar");
+        jTextField37.addActionListener(this::jTextField37ActionPerformed);
+        CE_solar_panel_card3.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, -1));
+
+        jLabel37.setText("Add brand or select one");
+        CE_solar_panel_card3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 9, -1, -1));
+
+        jLabel38.setText("Brand name");
+        CE_solar_panel_card3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 46, -1, -1));
+
+        jLabel39.setText("Install Cost");
+        CE_solar_panel_card3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 74, -1, -1));
+
+        jLabel40.setText("Output watt");
+        CE_solar_panel_card3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, -1, -1));
+
+        jLabel41.setText("dailySunTime");
+        CE_solar_panel_card3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 153, -1, -1));
+
+        jLabel42.setText("panelCount");
+        CE_solar_panel_card3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 191, -1, -1));
+
+        jButton13.setText("Add brand");
+        CE_solar_panel_card3.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        jButton14.setText("Remove brand");
+        CE_solar_panel_card3.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
+
+        jButton3.setText("Calculate");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
+        CE_solar_panel_card3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+
+        jTextArea7.setColumns(20);
+        jTextArea7.setRows(5);
+        jTextArea7.setText("Solar Card");
+        jScrollPane7.setViewportView(jTextArea7);
+
+        CE_solar_panel_card3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 80, 160));
+
+        jLabel3.setText("Saving");
+        CE_solar_panel_card3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+
+        CE_card_panel.add(CE_solar_panel_card3, "solarCard");
+
+        CE_heat_pump_card.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CE_solar_brands4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CE_heat_pump_card.add(CE_solar_brands4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+
+        jTextField23.setText("EX Heat");
+        jTextField23.addActionListener(this::jTextField23jTextField2ActionPerformed);
+        CE_heat_pump_card.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, -1));
+
+        jTextField24.setText("EX Heat");
+        jTextField24.addActionListener(this::jTextField24jTextField5ActionPerformed);
+        CE_heat_pump_card.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 90, -1));
+
+        jTextField25.setText("EX Heat");
+        jTextField25.addActionListener(this::jTextField25jTextField6ActionPerformed);
+        CE_heat_pump_card.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 90, -1));
+
+        jTextField26.setText("EX Heat");
+        jTextField26.addActionListener(this::jTextField26ActionPerformed);
+        CE_heat_pump_card.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 90, -1));
+
+        jTextField27.setText("EX Heat");
+        jTextField27.addActionListener(this::jTextField27ActionPerformed);
+        CE_heat_pump_card.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, -1));
+
+        jLabel25.setText("Add brand or select one");
+        CE_heat_pump_card.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 9, -1, -1));
+
+        jLabel26.setText("Brand name");
+        CE_heat_pump_card.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 46, -1, -1));
+
+        jLabel27.setText("Install Cost");
+        CE_heat_pump_card.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 74, -1, -1));
+
+        jLabel28.setText("Output watt");
+        CE_heat_pump_card.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, -1, -1));
+
+        jLabel29.setText("dailySunTime");
+        CE_heat_pump_card.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 153, -1, -1));
+
+        jLabel30.setText("panelCount");
+        CE_heat_pump_card.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 191, -1, -1));
+
+        jButton9.setText("Add brand");
+        CE_heat_pump_card.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        jButton10.setText("Remove brand");
+        CE_heat_pump_card.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
+
+        jButton2.setText("Calculate");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        CE_heat_pump_card.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jTextArea6.setText("Heat Card");
+        jScrollPane6.setViewportView(jTextArea6);
+
+        CE_heat_pump_card.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 80, 160));
+
+        jLabel2.setText("Saving");
+        CE_heat_pump_card.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+
+        CE_card_panel.add(CE_heat_pump_card, "heatCard");
+
+        CE_wind_panel_card.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CE_solar_brands7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CE_wind_panel_card.add(CE_solar_brands7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+
+        jTextField38.setText("EX Wind");
+        jTextField38.addActionListener(this::jTextField38jTextField2ActionPerformed);
+        CE_wind_panel_card.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, -1));
+
+        jTextField39.setText("EX Wind");
+        jTextField39.addActionListener(this::jTextField39jTextField5ActionPerformed);
+        CE_wind_panel_card.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 90, -1));
+
+        jTextField40.setText("EX Wind");
+        jTextField40.addActionListener(this::jTextField40jTextField6ActionPerformed);
+        CE_wind_panel_card.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 90, -1));
+
+        jTextField41.setText("EX Wind");
+        jTextField41.addActionListener(this::jTextField41ActionPerformed);
+        CE_wind_panel_card.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 90, -1));
+
+        jTextField42.setText("EX Wind");
+        jTextField42.addActionListener(this::jTextField42ActionPerformed);
+        CE_wind_panel_card.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, -1));
+
+        jLabel43.setText("Add brand or select one");
+        CE_wind_panel_card.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 9, -1, -1));
+
+        jLabel44.setText("Brand name");
+        CE_wind_panel_card.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 46, -1, -1));
+
+        jLabel45.setText("Install Cost");
+        CE_wind_panel_card.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 74, -1, -1));
+
+        jLabel46.setText("Output watt");
+        CE_wind_panel_card.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, -1, -1));
+
+        jLabel47.setText("dailySunTime");
+        CE_wind_panel_card.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 153, -1, -1));
+
+        jLabel48.setText("panelCount");
+        CE_wind_panel_card.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 191, -1, -1));
+
+        jButton15.setText("Add brand");
+        CE_wind_panel_card.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        jButton16.setText("Remove brand");
+        CE_wind_panel_card.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
+
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jTextArea5.setText("Wind Card");
+        jScrollPane5.setViewportView(jTextArea5);
+
+        CE_wind_panel_card.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 80, 160));
+
+        jLabel1.setText("Saving");
+        CE_wind_panel_card.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+
+        jButton1.setText("Calculate");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        CE_wind_panel_card.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+
+        CE_card_panel.add(CE_wind_panel_card, "windCard");
+
+        CE_panel.add(CE_card_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 450, -1));
+
+        jTextField1.setText("jTextField1");
+        CE_panel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 53, 588, 90));
 
         CE_card_button_group.add(CE_heat_pump_button);
         CE_heat_pump_button.setText("Heat Pump");
         CE_heat_pump_button.addActionListener(this::CE_heat_pump_buttonActionPerformed);
+        CE_panel.add(CE_heat_pump_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, -1, -1));
 
-        CE_card_panel.setLayout(new java.awt.CardLayout());
-
-        CE_solar_brands5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTextField28.addActionListener(this::jTextField28jTextField2ActionPerformed);
-
-        jTextField29.addActionListener(this::jTextField29jTextField5ActionPerformed);
-
-        jTextField30.addActionListener(this::jTextField30jTextField6ActionPerformed);
-
-        jTextField31.addActionListener(this::jTextField31ActionPerformed);
-
-        jTextField32.addActionListener(this::jTextField32ActionPerformed);
-
-        jLabel31.setText("Add brand or select one");
-
-        jLabel32.setText("Brand name");
-
-        jLabel33.setText("Install Cost");
-
-        jLabel34.setText("Output watt");
-
-        jLabel35.setText("dailySunTime");
-
-        jLabel36.setText("panelCount");
-
-        jButton11.setText("Add brand");
-
-        jButton12.setText("Remove brand");
-
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
-
-        javax.swing.GroupLayout CE_wind_panel_cardLayout = new javax.swing.GroupLayout(CE_wind_panel_card);
-        CE_wind_panel_card.setLayout(CE_wind_panel_cardLayout);
-        CE_wind_panel_cardLayout.setHorizontalGroup(
-            CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CE_wind_panel_cardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel36)
-                    .addComponent(CE_solar_brands5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel34)
-                    .addComponent(jLabel33)
-                    .addComponent(jLabel35))
-                .addGap(18, 18, 18)
-                .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(CE_wind_panel_cardLayout.createSequentialGroup()
-                .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CE_wind_panel_cardLayout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel31))
-                    .addGroup(CE_wind_panel_cardLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jButton11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        CE_wind_panel_cardLayout.setVerticalGroup(
-            CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CE_wind_panel_cardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CE_wind_panel_cardLayout.createSequentialGroup()
-                        .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CE_solar_brands5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel31))
-                        .addGap(18, 18, 18)
-                        .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel32))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel33))
-                        .addGap(18, 18, 18)
-                        .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel34)
-                            .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel35))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel36)
-                            .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(CE_wind_panel_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton11)
-                            .addComponent(jButton12)))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        CE_card_panel.add(CE_wind_panel_card, "windCard");
-
-        CE_solar_brands4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTextField23.addActionListener(this::jTextField23jTextField2ActionPerformed);
-
-        jTextField24.addActionListener(this::jTextField24jTextField5ActionPerformed);
-
-        jTextField25.addActionListener(this::jTextField25jTextField6ActionPerformed);
-
-        jLabel25.setText("Add brand or select one");
-
-        jLabel26.setText("Brand name");
-
-        jLabel27.setText("Install Cost");
-
-        jLabel28.setText("Output watt");
-
-        jLabel29.setText("dailySunTime");
-
-        jLabel30.setText("panelCount");
-
-        jButton9.setText("Add brand");
-
-        jButton10.setText("Remove brand");
-
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
-
-        javax.swing.GroupLayout CE_heat_pump_cardLayout = new javax.swing.GroupLayout(CE_heat_pump_card);
-        CE_heat_pump_card.setLayout(CE_heat_pump_cardLayout);
-        CE_heat_pump_cardLayout.setHorizontalGroup(
-            CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CE_heat_pump_cardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CE_heat_pump_cardLayout.createSequentialGroup()
-                        .addGroup(CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel30))
-                        .addGap(18, 18, 18)
-                        .addGroup(CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(CE_heat_pump_cardLayout.createSequentialGroup()
-                        .addComponent(jButton9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton10))
-                    .addGroup(CE_heat_pump_cardLayout.createSequentialGroup()
-                        .addComponent(CE_solar_brands4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel25)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
-        );
-        CE_heat_pump_cardLayout.setVerticalGroup(
-            CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CE_heat_pump_cardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CE_heat_pump_cardLayout.createSequentialGroup()
-                        .addGroup(CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CE_solar_brands4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25))
-                        .addGap(18, 18, 18)
-                        .addGroup(CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CE_heat_pump_cardLayout.createSequentialGroup()
-                                .addComponent(jLabel26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel27)
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel28)
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel29)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel30))
-                            .addGroup(CE_heat_pump_cardLayout.createSequentialGroup()
-                                .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(14, 14, 14)
-                                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(9, 9, 9)
-                        .addGroup(CE_heat_pump_cardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9)
-                            .addComponent(jButton10)))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        CE_card_panel.add(CE_heat_pump_card, "heatCard");
-
-        CE_solar_brands3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTextField17.addActionListener(this::jTextField2ActionPerformed);
-
-        jTextField18.addActionListener(this::jTextField5ActionPerformed);
-
-        jTextField19.addActionListener(this::jTextField6ActionPerformed);
-
-        jLabel19.setText("Add brand or select one");
-
-        jLabel20.setText("Brand name");
-
-        jLabel21.setText("Install Cost");
-
-        jLabel22.setText("Output watt");
-
-        jLabel23.setText("dailySunTime");
-
-        jLabel24.setText("panelCount");
-
-        jButton7.setText("Add brand");
-
-        jButton8.setText("Remove brand");
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        javax.swing.GroupLayout CE_solar_panel_card3Layout = new javax.swing.GroupLayout(CE_solar_panel_card3);
-        CE_solar_panel_card3.setLayout(CE_solar_panel_card3Layout);
-        CE_solar_panel_card3Layout.setHorizontalGroup(
-            CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CE_solar_panel_card3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CE_solar_panel_card3Layout.createSequentialGroup()
-                        .addGroup(CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel24))
-                        .addGap(18, 18, 18)
-                        .addGroup(CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(CE_solar_panel_card3Layout.createSequentialGroup()
-                        .addComponent(jButton7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8))
-                    .addGroup(CE_solar_panel_card3Layout.createSequentialGroup()
-                        .addComponent(CE_solar_brands3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel19)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        CE_solar_panel_card3Layout.setVerticalGroup(
-            CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CE_solar_panel_card3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CE_solar_panel_card3Layout.createSequentialGroup()
-                        .addGroup(CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CE_solar_brands3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19))
-                        .addGap(18, 18, 18)
-                        .addGroup(CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CE_solar_panel_card3Layout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel21)
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel22)
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel23)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel24))
-                            .addGroup(CE_solar_panel_card3Layout.createSequentialGroup()
-                                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(14, 14, 14)
-                                .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(9, 9, 9)
-                        .addGroup(CE_solar_panel_card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        CE_card_panel.add(CE_solar_panel_card3, "solarCard");
-
-        jTextField1.setText("jTextField1");
-
-        javax.swing.GroupLayout CE_panelLayout = new javax.swing.GroupLayout(CE_panel);
-        CE_panel.setLayout(CE_panelLayout);
-        CE_panelLayout.setHorizontalGroup(
-            CE_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CE_panelLayout.createSequentialGroup()
-                .addGroup(CE_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CE_panelLayout.createSequentialGroup()
-                        .addGroup(CE_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CE_panelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(CE_back_button, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(303, 303, 303)
-                                .addComponent(CE_label))
-                            .addGroup(CE_panelLayout.createSequentialGroup()
-                                .addGap(320, 320, 320)
-                                .addComponent(CE_wind_panel_button)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CE_solar_panel_button)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CE_heat_pump_button))
-                            .addGroup(CE_panelLayout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(CE_card_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(CE_panelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextField1)))
-                .addContainerGap())
-        );
-        CE_panelLayout.setVerticalGroup(
-            CE_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CE_panelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CE_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CE_back_button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CE_label, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(CE_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CE_solar_panel_button)
-                    .addComponent(CE_heat_pump_button)
-                    .addComponent(CE_wind_panel_button))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CE_card_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CE_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CE_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(CE_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -503,18 +349,6 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         ((java.awt.CardLayout) CE_card_panel.getLayout()).show(CE_card_panel, "heatCard");
     }//GEN-LAST:event_CE_heat_pump_buttonActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void jTextField23jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField23jTextField2ActionPerformed
@@ -527,32 +361,72 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField25jTextField6ActionPerformed
 
-    private void jTextField28jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField28jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField28jTextField2ActionPerformed
-
-    private void jTextField29jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField29jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField29jTextField5ActionPerformed
-
-    private void jTextField30jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField30jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField30jTextField6ActionPerformed
-
-    private void jTextField31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField31ActionPerformed
-
-    private void jTextField32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField32ActionPerformed
-
     private void CE_back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_back_buttonActionPerformed
         // TODO add your handling code here:
         HomeEnergyManagerApp homeEnergyManagerApp = new HomeEnergyManagerApp();
         homeEnergyManagerApp.startGUI();
         this.dispose();
     }//GEN-LAST:event_CE_back_buttonActionPerformed
+
+    private void jTextField27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField27ActionPerformed
+
+    private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField26ActionPerformed
+
+    private void jTextField33jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField33jTextField2ActionPerformed
+
+    private void jTextField34jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField34jTextField5ActionPerformed
+
+    private void jTextField35jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField35jTextField6ActionPerformed
+
+    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField36ActionPerformed
+
+    private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField37ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField37ActionPerformed
+
+    private void jTextField38jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField38jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField38jTextField2ActionPerformed
+
+    private void jTextField39jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField39jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField39jTextField5ActionPerformed
+
+    private void jTextField40jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField40jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField40jTextField6ActionPerformed
+
+    private void jTextField41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField41ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField41ActionPerformed
+
+    private void jTextField42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField42ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField42ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -587,58 +461,64 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     private javax.swing.JPanel CE_heat_pump_card;
     private javax.swing.JLabel CE_label;
     private javax.swing.JPanel CE_panel;
-    private javax.swing.JComboBox<String> CE_solar_brands3;
     private javax.swing.JComboBox<String> CE_solar_brands4;
-    private javax.swing.JComboBox<String> CE_solar_brands5;
+    private javax.swing.JComboBox<String> CE_solar_brands6;
+    private javax.swing.JComboBox<String> CE_solar_brands7;
     private javax.swing.JToggleButton CE_solar_panel_button;
     private javax.swing.JPanel CE_solar_panel_card3;
     private javax.swing.JToggleButton CE_wind_panel_button;
     private javax.swing.JPanel CE_wind_panel_card;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextArea jTextArea7;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
+    private javax.swing.JTextField jTextField34;
+    private javax.swing.JTextField jTextField35;
+    private javax.swing.JTextField jTextField36;
+    private javax.swing.JTextField jTextField37;
+    private javax.swing.JTextField jTextField38;
+    private javax.swing.JTextField jTextField39;
+    private javax.swing.JTextField jTextField40;
+    private javax.swing.JTextField jTextField41;
+    private javax.swing.JTextField jTextField42;
     // End of variables declaration//GEN-END:variables
 }

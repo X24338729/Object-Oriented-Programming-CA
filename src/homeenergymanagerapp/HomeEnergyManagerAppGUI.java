@@ -19,6 +19,23 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
      */
     public HomeEnergyManagerAppGUI() {
         initComponents();
+        String t = "Welcome to Home Energy Manager\n"
+                + "\n"
+                + "Our project supports UN Sustainable Development Goal 7: Affordable and Clean Energy.\n"
+                + "\n"
+                + "The idea is simple: track energy, save energy, switch to clean energy.\n"
+                + "\n"
+                + "1. Consumption Tracker\n"
+                + "Record your monthly electricity and gas usage and bills, view them, search by month and delete entries.\n"
+                + "\n"
+                + "2. Appliances and Savings (WattWise)\n"
+                + "Add your household appliances with their watts and daily hours, see which ones use the most energy and get tips to save.\n"
+                + "\n"
+                + "3. Clean Energy Guide\n"
+                + "Explore options such as solar panels, wind turbines and heat pumps, search by budget or type, compare cost and payback period, and save your favourites.\n"
+                + "\n"
+                + "Choose a section using the buttons below.";
+        homeAppText.setText(t);
     }
 
     /**
@@ -35,37 +52,38 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
         SavingApp_button = new javax.swing.JButton();
         CleanEnergyApp_button = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        homeAppText = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        WattWiseApp_button.setBorder(null);
-        WattWiseApp_button.setBorderPainted(false);
-        WattWiseApp_button.setContentAreaFilled(false);
-        WattWiseApp_button.setFocusPainted(false);
-        WattWiseApp_button.setFocusable(false);
+        WattWiseApp_button.setText("Consumption Tracker");
+        WattWiseApp_button.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         WattWiseApp_button.addActionListener(this::WattWiseApp_buttonActionPerformed);
-        jPanel1.add(WattWiseApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 130, 120));
+        jPanel1.add(WattWiseApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 130, 40));
 
-        SavingApp_button.setBorder(null);
-        SavingApp_button.setBorderPainted(false);
-        SavingApp_button.setContentAreaFilled(false);
-        SavingApp_button.setFocusPainted(false);
-        SavingApp_button.setFocusable(false);
+        SavingApp_button.setText("Appliances & Savings");
+        SavingApp_button.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         SavingApp_button.addActionListener(this::SavingApp_buttonActionPerformed);
-        jPanel1.add(SavingApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 130, 120));
+        jPanel1.add(SavingApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 130, 40));
 
-        CleanEnergyApp_button.setBorder(null);
-        CleanEnergyApp_button.setBorderPainted(false);
-        CleanEnergyApp_button.setContentAreaFilled(false);
-        CleanEnergyApp_button.setFocusPainted(false);
-        CleanEnergyApp_button.setFocusable(false);
+        CleanEnergyApp_button.setText("Clean Energy Guide");
+        CleanEnergyApp_button.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CleanEnergyApp_button.addActionListener(this::CleanEnergyApp_buttonActionPerformed);
-        jPanel1.add(CleanEnergyApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 130, 120));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mainMenu.png"))); // NOI18N
+        jPanel1.add(CleanEnergyApp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 130, 40));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setText("Home Energy Manager");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 290, 40));
+
+        homeAppText.setEditable(false);
+        jScrollPane1.setViewportView(homeAppText);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 580, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,7 +93,7 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -132,7 +150,10 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
     private javax.swing.JButton CleanEnergyApp_button;
     private javax.swing.JButton SavingApp_button;
     private javax.swing.JButton WattWiseApp_button;
+    private javax.swing.JTextPane homeAppText;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
