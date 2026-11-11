@@ -448,7 +448,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
                             .addGroup(CE_panelLayout.createSequentialGroup()
                                 .addGap(65, 65, 65)
                                 .addComponent(CE_card_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 70, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(CE_panelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jTextField1)))
