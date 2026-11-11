@@ -4,6 +4,8 @@
  */
 package homeenergymanagerapp.appliances;
 
+import homeenergymanagerapp.HomeEnergyManagerApp;
+
 /**
  *
  * @author emrec
@@ -50,6 +52,7 @@ public class ApplianceMenuGUI extends javax.swing.JFrame {
         reportBtn.addActionListener(this::reportBtnActionPerformed);
 
         backBtn.setText("Back to Main Menu");
+        backBtn.addActionListener(this::backBtnActionPerformed);
 
         addBtn.setText("Add Appliance");
         addBtn.addActionListener(this::addBtnActionPerformed);
@@ -94,6 +97,7 @@ public class ApplianceMenuGUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
@@ -115,6 +119,13 @@ this.dispose();
     new SavingsReportGUI().setVisible(true);
 this.dispose();
     }//GEN-LAST:event_reportBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        HomeEnergyManagerApp homeEnergyManagerApp = new HomeEnergyManagerApp();
+        homeEnergyManagerApp.startGUI();
+        this.dispose();
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments

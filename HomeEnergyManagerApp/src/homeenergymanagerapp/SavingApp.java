@@ -4,10 +4,21 @@
  */
 package homeenergymanagerapp;
 
+import homeenergymanagerapp.appliances.ApplianceMenuGUI;
+
 /**
  *
  * @author 
  */
 public class SavingApp {
+    
+    
+    
+    public void startGUI(){
+    
+        ApplianceMenuGUI AMGUI = new ApplianceMenuGUI();
+        AMGUI.setVisible(true);
+    
+    }
     
 }
