@@ -5,6 +5,7 @@
 package homeenergymanagerapp.cleanEnergy;
 
 import homeenergymanagerapp.HomeEnergyManagerApp;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -39,24 +40,24 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_wind_panel_button = new javax.swing.JToggleButton();
         CE_card_panel = new javax.swing.JPanel();
         CE_solar_panel_card3 = new javax.swing.JPanel();
-        CE_solar_brands6 = new javax.swing.JComboBox<>();
-        jTextField33 = new javax.swing.JTextField();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
+        Solar_Brand_Selector = new javax.swing.JComboBox<>();
+        Brand_Field = new javax.swing.JTextField();
+        Install_Field = new javax.swing.JTextField();
+        Output_Field = new javax.swing.JTextField();
+        SunTime_Field = new javax.swing.JTextField();
+        PanelCount_Field = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea7 = new javax.swing.JTextArea();
+        jLabel49 = new javax.swing.JLabel();
+        Electricity_Consumption_Field = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Saving_Text = new javax.swing.JTextPane();
         CE_heat_pump_card = new javax.swing.JPanel();
         CE_solar_brands4 = new javax.swing.JComboBox<>();
         jTextField23 = new javax.swing.JTextField();
@@ -125,66 +126,64 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
 
         CE_solar_panel_card3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CE_solar_brands6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        CE_solar_panel_card3.add(CE_solar_brands6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        Solar_Brand_Selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a brand", "SunPower", "LG", "Panasonic", "Jinko Solar", "Ocells", "Trina Solar" }));
+        Solar_Brand_Selector.addActionListener(this::Solar_Brand_SelectorActionPerformed);
+        CE_solar_panel_card3.add(Solar_Brand_Selector, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
-        jTextField33.setText("EX Solar");
-        jTextField33.addActionListener(this::jTextField33jTextField2ActionPerformed);
-        CE_solar_panel_card3.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, -1));
+        Brand_Field.setEditable(false);
+        Brand_Field.addActionListener(this::Brand_FieldjTextField2ActionPerformed);
+        CE_solar_panel_card3.add(Brand_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, -1));
 
-        jTextField34.setText("EX Solar");
-        jTextField34.addActionListener(this::jTextField34jTextField5ActionPerformed);
-        CE_solar_panel_card3.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 90, -1));
+        Install_Field.setEditable(false);
+        Install_Field.addActionListener(this::Install_FieldjTextField5ActionPerformed);
+        CE_solar_panel_card3.add(Install_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 90, -1));
 
-        jTextField35.setText("EX Solar");
-        jTextField35.addActionListener(this::jTextField35jTextField6ActionPerformed);
-        CE_solar_panel_card3.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 90, -1));
+        Output_Field.setEditable(false);
+        Output_Field.addActionListener(this::Output_FieldjTextField6ActionPerformed);
+        CE_solar_panel_card3.add(Output_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 90, -1));
 
-        jTextField36.setText("EX Solar");
-        jTextField36.addActionListener(this::jTextField36ActionPerformed);
-        CE_solar_panel_card3.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 90, -1));
+        SunTime_Field.setEditable(false);
+        SunTime_Field.addActionListener(this::SunTime_FieldActionPerformed);
+        CE_solar_panel_card3.add(SunTime_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 90, -1));
 
-        jTextField37.setText("EX Solar");
-        jTextField37.addActionListener(this::jTextField37ActionPerformed);
-        CE_solar_panel_card3.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, -1));
+        PanelCount_Field.addActionListener(this::PanelCount_FieldActionPerformed);
+        CE_solar_panel_card3.add(PanelCount_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 100, -1));
 
         jLabel37.setText("Add brand or select one");
-        CE_solar_panel_card3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 9, -1, -1));
+        CE_solar_panel_card3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
         jLabel38.setText("Brand name");
-        CE_solar_panel_card3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 46, -1, -1));
+        CE_solar_panel_card3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         jLabel39.setText("Install Cost");
-        CE_solar_panel_card3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 74, -1, -1));
+        CE_solar_panel_card3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         jLabel40.setText("Output watt");
-        CE_solar_panel_card3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, -1, -1));
+        CE_solar_panel_card3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         jLabel41.setText("dailySunTime");
-        CE_solar_panel_card3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 153, -1, -1));
+        CE_solar_panel_card3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        jLabel42.setText("panelCount");
-        CE_solar_panel_card3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 191, -1, -1));
-
-        jButton13.setText("Add brand");
-        CE_solar_panel_card3.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        jButton14.setText("Remove brand");
-        CE_solar_panel_card3.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
+        jLabel42.setText("Panel count");
+        CE_solar_panel_card3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
 
         jButton3.setText("Calculate");
         jButton3.addActionListener(this::jButton3ActionPerformed);
-        CE_solar_panel_card3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+        CE_solar_panel_card3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 90, -1));
 
-        jTextArea7.setColumns(20);
-        jTextArea7.setRows(5);
-        jTextArea7.setText("Solar Card");
-        jScrollPane7.setViewportView(jTextArea7);
+        jLabel49.setText("Yearly Electricity");
+        CE_solar_panel_card3.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 90, 20));
 
-        CE_solar_panel_card3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 80, 160));
+        Electricity_Consumption_Field.setText("4000");
+        Electricity_Consumption_Field.addActionListener(this::Electricity_Consumption_FieldActionPerformed);
+        CE_solar_panel_card3.add(Electricity_Consumption_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 100, 20));
 
-        jLabel3.setText("Saving");
-        CE_solar_panel_card3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        jLabel3.setText("Consumption");
+        CE_solar_panel_card3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
+
+        jScrollPane1.setViewportView(Saving_Text);
+
+        CE_solar_panel_card3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 210, 110));
 
         CE_card_panel.add(CE_solar_panel_card3, "solarCard");
 
@@ -376,25 +375,25 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField26ActionPerformed
 
-    private void jTextField33jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33jTextField2ActionPerformed
+    private void Brand_FieldjTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brand_FieldjTextField2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField33jTextField2ActionPerformed
+    }//GEN-LAST:event_Brand_FieldjTextField2ActionPerformed
 
-    private void jTextField34jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34jTextField5ActionPerformed
+    private void Install_FieldjTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Install_FieldjTextField5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField34jTextField5ActionPerformed
+    }//GEN-LAST:event_Install_FieldjTextField5ActionPerformed
 
-    private void jTextField35jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35jTextField6ActionPerformed
+    private void Output_FieldjTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Output_FieldjTextField6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField35jTextField6ActionPerformed
+    }//GEN-LAST:event_Output_FieldjTextField6ActionPerformed
 
-    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+    private void SunTime_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SunTime_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_SunTime_FieldActionPerformed
 
-    private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField37ActionPerformed
+    private void PanelCount_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PanelCount_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField37ActionPerformed
+    }//GEN-LAST:event_PanelCount_FieldActionPerformed
 
     private void jTextField38jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField38jTextField2ActionPerformed
         // TODO add your handling code here:
@@ -426,7 +425,57 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        int panelCount;
+        double electricityConsumption;
+        
+        if (Solar_Brand_Selector.getSelectedIndex() <= 0) {
+            JOptionPane.showMessageDialog(null, "Select a brand first");
+            return;
+        }
+        
+        try {   
+            SolarPanel solar = OptionManager.solar.get(Solar_Brand_Selector.getSelectedIndex());
+            
+            panelCount = Integer.parseInt(PanelCount_Field.getText().trim());
+            electricityConsumption = Double.parseDouble(Electricity_Consumption_Field.getText().trim());
+
+            solar.calculateAnnualSavings(panelCount,electricityConsumption);
+            Saving_Text.setText(solar.printSavings());
+            
+            solar.saveTXT(solar.printSavings());
+            solar.saveTXT("");
+        
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Enter panel count and electricity consumption pls");
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void Solar_Brand_SelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Solar_Brand_SelectorActionPerformed
+        // TODO add your handling code here:
+        int index = Solar_Brand_Selector.getSelectedIndex();
+        if (index < 0) return;
+        if(index == 0){
+    
+        Brand_Field.setText("");
+        Install_Field.setText("");
+        Output_Field.setText("");
+        SunTime_Field.setText("");
+    
+        }else{
+            
+            SolarPanel p = OptionManager.solar.get(index);
+            Brand_Field.setText(p.getBrand());
+            Install_Field.setText(String.valueOf(p.getInstallCost()));
+            Output_Field.setText(String.valueOf(p.getOutputWatt()));
+            SunTime_Field.setText(String.valueOf(p.getDailySunTime()));
+        
+        }
+
+    }//GEN-LAST:event_Solar_Brand_SelectorActionPerformed
+
+    private void Electricity_Consumption_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Electricity_Consumption_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Electricity_Consumption_FieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -454,6 +503,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Brand_Field;
     private javax.swing.JButton CE_back_button;
     private javax.swing.ButtonGroup CE_card_button_group;
     private javax.swing.JPanel CE_card_panel;
@@ -462,16 +512,20 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     private javax.swing.JLabel CE_label;
     private javax.swing.JPanel CE_panel;
     private javax.swing.JComboBox<String> CE_solar_brands4;
-    private javax.swing.JComboBox<String> CE_solar_brands6;
     private javax.swing.JComboBox<String> CE_solar_brands7;
     private javax.swing.JToggleButton CE_solar_panel_button;
     private javax.swing.JPanel CE_solar_panel_card3;
     private javax.swing.JToggleButton CE_wind_panel_button;
     private javax.swing.JPanel CE_wind_panel_card;
+    private javax.swing.JTextField Electricity_Consumption_Field;
+    private javax.swing.JTextField Install_Field;
+    private javax.swing.JTextField Output_Field;
+    private javax.swing.JTextField PanelCount_Field;
+    private javax.swing.JTextPane Saving_Text;
+    private javax.swing.JComboBox<String> Solar_Brand_Selector;
+    private javax.swing.JTextField SunTime_Field;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
@@ -498,23 +552,18 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
     private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField39;
     private javax.swing.JTextField jTextField40;
