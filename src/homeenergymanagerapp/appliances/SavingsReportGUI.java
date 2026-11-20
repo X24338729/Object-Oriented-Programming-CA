@@ -3,10 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package homeenergymanagerapp.appliances;
+import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
+ * Creates the savings report (cost, highest consumer, tips)
+ * and saves/loads the appliance list to/from a file.
  *
- * @author emrec
+ * @author Emre Cholakoglu
  */
 public class SavingsReportGUI extends javax.swing.JFrame {
     
@@ -16,7 +20,8 @@ public class SavingsReportGUI extends javax.swing.JFrame {
      * Creates new form SavingsReportGUI
      */
     public SavingsReportGUI() {
-        initComponents();
+    initComponents();
+    reportTA.setEditable(false);    // the report is read only
     }
 
     /**
@@ -49,14 +54,17 @@ public class SavingsReportGUI extends javax.swing.JFrame {
         rateLbl.setText("Electricity Rate (e/kWh):");
 
         generateBtn.setText("Genereate Report");
+        generateBtn.addActionListener(this::generateBtnActionPerformed);
 
         reportTA.setColumns(20);
         reportTA.setRows(5);
         jScrollPane1.setViewportView(reportTA);
 
         saveFileBtn.setText("Save to File");
+        saveFileBtn.addActionListener(this::saveFileBtnActionPerformed);
 
         loadFileBtn.setText("Load From File");
+        loadFileBtn.addActionListener(this::loadFileBtnActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,27 +74,28 @@ public class SavingsReportGUI extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(backBtn)
-                        .addGap(84, 84, 84)
-                        .addComponent(saveFileBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(loadFileBtn))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(rateLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(generateBtn)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(rateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(292, 292, 292))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(backBtn)
+                        .addGap(87, 87, 87)
+                        .addComponent(saveFileBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(loadFileBtn)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(titleLbl)
-                        .addGap(131, 131, 131))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(generateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(93, 93, 93))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(80, 80, 80))))
+                        .addComponent(titleLbl)
+                        .addGap(229, 229, 229))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,15 +105,15 @@ public class SavingsReportGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rateLbl)
                     .addComponent(rateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(generateBtn))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                    .addComponent(generateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn)
                     .addComponent(saveFileBtn)
                     .addComponent(loadFileBtn))
-                .addContainerGap())
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -115,6 +124,67 @@ public class SavingsReportGUI extends javax.swing.JFrame {
     new ApplianceMenuGUI().setVisible(true);
     this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void generateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateBtnActionPerformed
+    try {
+        double rate = Double.parseDouble(rateTF.getText());
+
+        if (rate <= 0) {
+            JOptionPane.showMessageDialog(this, "The electricity rate must be more than 0.");
+            return;
+        }
+
+        if (ApplianceMenuGUI.manager.getAllAppliances().isEmpty()) {
+            reportTA.setText("No appliances added yet. Add some appliances first.");
+            return;
+        }
+
+        reportTA.setText("");
+        reportTA.append("===== SAVINGS REPORT =====\n\n");
+
+        // every appliance with its monthly cost, share of total use and saving tip
+       double totalKWh = ApplianceMenuGUI.manager.getTotalDailyKWh();
+     for (Appliance a : ApplianceMenuGUI.manager.getAllAppliances()) {
+        double percent = a.getDailyKWh() / totalKWh * 100;
+        reportTA.append(a.getName() + " (" + a.getRoom() + ")\n");
+        reportTA.append("Daily use: " + String.format("%.2f", a.getDailyKWh()) + " kWh");
+        reportTA.append(" | Monthly cost: €" + String.format("%.2f", a.getMonthlyCost(rate)));
+        reportTA.append(" | Share of total use: " + String.format("%.1f", percent) + "%\n");
+        reportTA.append("Tip: " + a.getSavingTip() + "\n\n");
+}
+
+        // the appliance that uses the most energy
+        Appliance highest = ApplianceMenuGUI.manager.getHighestConsumer();
+        reportTA.append("Highest consumer: " + highest.getName()
+                      + " (" + String.format("%.2f", highest.getDailyKWh()) + " kWh per day)\n");
+
+        // total monthly cost
+        double total = ApplianceMenuGUI.manager.getTotalMonthlyCost(rate);
+        reportTA.append("Total monthly cost: €" + String.format("%.2f", total));
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Please enter a number for the electricity rate (for example 0.35).");
+    }
+    }//GEN-LAST:event_generateBtnActionPerformed
+
+    private void saveFileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFileBtnActionPerformed
+    try {
+        ApplianceMenuGUI.manager.saveToFile();
+        JOptionPane.showMessageDialog(this, "Appliance list saved to file.");
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Error: the file could not be saved.");
+    }
+    }//GEN-LAST:event_saveFileBtnActionPerformed
+
+    private void loadFileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadFileBtnActionPerformed
+    try {
+        ApplianceMenuGUI.manager.loadFromFile();
+        JOptionPane.showMessageDialog(this, "Appliance list loaded from file. "
+                + ApplianceMenuGUI.manager.getAllAppliances().size() + " appliances found.");
+    } catch (IOException | ClassNotFoundException e) {
+        JOptionPane.showMessageDialog(this, "Error: no saved file found. Save the list first.");
+    }
+    }//GEN-LAST:event_loadFileBtnActionPerformed
 
     /**
      * @param args the command line arguments
