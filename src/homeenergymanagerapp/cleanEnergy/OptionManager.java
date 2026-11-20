@@ -18,7 +18,9 @@ public class OptionManager {
     public static ArrayList<SolarPanel> solar = new ArrayList<>(); 
     
     public void addSolarBrands(){
-      
+        if (!solar.isEmpty()){ 
+            return;
+        }
         File outfile;
         FileWriter fw;
         BufferedWriter bw;

@@ -434,15 +434,23 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
         
         try {   
+            
             SolarPanel solar = OptionManager.solar.get(Solar_Brand_Selector.getSelectedIndex());
+            Calculable c = solar;
             
             panelCount = Integer.parseInt(PanelCount_Field.getText().trim());
+            solar.setPanelCount(panelCount);
             electricityConsumption = Double.parseDouble(Electricity_Consumption_Field.getText().trim());
 
-            solar.calculateAnnualSavings(panelCount,electricityConsumption);
-            Saving_Text.setText(solar.printSavings());
+            if (panelCount <= 0 || electricityConsumption <= 0) {
+                JOptionPane.showMessageDialog(null, "Values must be greater than 0");   
+                return;
+            }
             
-            solar.saveTXT(solar.printSavings());
+            c.calculateAnnualSavings(panelCount,electricityConsumption);
+            Saving_Text.setText(c.printSavings());
+
+            solar.saveTXT(c.printSavings());
             solar.saveTXT("");
         
         } catch (NumberFormatException e) {
