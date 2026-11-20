@@ -39,64 +39,58 @@
                       <Component id="hoursLbl" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="wattsLbl" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="typeLbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="typeLbl" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lightingRB" min="-2" max="-2" attributes="0"/>
-                          <Component id="heatingRB" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="titleLbl" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="hoursTF" alignment="1" pref="138" max="32767" attributes="0"/>
+                          <Component id="wattsTF" alignment="0" max="32767" attributes="0"/>
+                          <Component id="roomTF" alignment="1" max="32767" attributes="0"/>
+                          <Component id="nameTF" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="tempLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="timerCB" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bulbsTF" pref="73" max="32767" attributes="0"/>
+                                  <Component id="bulbTF" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tempTF" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="bulbLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="bulbsLbl" min="-2" max="-2" attributes="0"/>
+                              <Component id="timerLbl" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="clearBtn" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lightingRB" pref="95" max="32767" attributes="0"/>
+                          <Component id="heatingRB" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="saveBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="clearBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="nameTF" min="-2" pref="73" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="tempLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="hoursTF" pref="73" max="32767" attributes="0"/>
-                                  <Component id="roomTF" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="wattsTF" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="bulbLbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="timerLbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="bulbsLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="timerCB" min="-2" max="-2" attributes="0"/>
-                          <Component id="bulbsTF" pref="73" max="32767" attributes="0"/>
-                          <Component id="bulbTF" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tempTF" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
               </Group>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="titleLbl" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -106,48 +100,54 @@
               <Component id="titleLbl" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="nameTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tempTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tempLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nameTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="roomTF" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="roomLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="roomTF" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="timerLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="timerCB" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="wattsTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="wattsLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="bulbTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bulbLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bulbTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="hoursLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="hoursTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bulbsLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bulbsTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="hoursLbl" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="heatingRB" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="typeLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="heatingRB" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="saveBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lightingRB" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="clearBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="typeLbl" min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lightingRB" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="saveBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="backBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="clearBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="backBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -178,7 +178,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="wattsLbl">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Watts"/>
+        <Property name="text" type="java.lang.String" value="Watts (per bulb for lighting)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="wattsTF">
@@ -228,6 +228,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Heating"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="heatingRBActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="lightingRB">
       <Properties>
@@ -236,6 +239,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Lighting"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lightingRBActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="timerCB">
     </Component>
@@ -243,11 +249,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Save"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="clearBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="titleLbl">
       <Properties>

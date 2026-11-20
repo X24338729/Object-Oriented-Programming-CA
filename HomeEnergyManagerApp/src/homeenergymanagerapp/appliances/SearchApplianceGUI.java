@@ -3,10 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package homeenergymanagerapp.appliances;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
+ * Search for an appliance by name, or for all appliances in a room.
  *
- * @author emrec
+ * @author Emre Cholakoglu
  */
 public class SearchApplianceGUI extends javax.swing.JFrame {
     
@@ -16,7 +19,8 @@ public class SearchApplianceGUI extends javax.swing.JFrame {
      * Creates new form SearchApplianceGUI
      */
     public SearchApplianceGUI() {
-        initComponents();
+    initComponents();
+    resultTA.setEditable(false);    // results are read only
     }
 
     /**
@@ -58,6 +62,7 @@ public class SearchApplianceGUI extends javax.swing.JFrame {
         searchTF.addActionListener(this::searchTFActionPerformed);
 
         searchBtn.setText("Search");
+        searchBtn.addActionListener(this::searchBtnActionPerformed);
 
         resultTA.setColumns(20);
         resultTA.setRows(5);
@@ -67,31 +72,30 @@ public class SearchApplianceGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(titleLbl)
-                .addGap(125, 125, 125))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backBtn))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(searchBtn)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(90, 90, 90))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(searchByLbl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nameRB))
-                            .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(roomRB)
-                            .addComponent(searchBtn)))
+                                .addComponent(nameRB)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(titleLbl)
+                                    .addComponent(roomRB)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                        .addComponent(backBtn)))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,11 +110,11 @@ public class SearchApplianceGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn))
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(backBtn)
-                .addContainerGap())
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -125,6 +129,42 @@ public class SearchApplianceGUI extends javax.swing.JFrame {
     private void searchTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchTFActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+    String text = searchTF.getText();
+    resultTA.setText("");
+
+    if (text.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter something to search for.");
+        return;
+    }
+
+    if (nameRB.isSelected()) {
+        // search by name: there is only one result (or none)
+        Appliance a = ApplianceMenuGUI.manager.searchByName(text);
+        if (a != null) {
+            resultTA.append(a.toString() + "\n");
+            resultTA.append("Tip: " + a.getSavingTip());
+        } else {
+            resultTA.setText("No appliance called " + text + " was found.");
+        }
+
+    } else if (roomRB.isSelected()) {
+        // search by room: there can be many results, so we get a list back
+        ArrayList<Appliance> results = ApplianceMenuGUI.manager.searchByRoom(text);
+        if (results.isEmpty()) {
+            resultTA.setText("No appliances found in " + text + ".");
+        } else {
+            for (Appliance a : results) {
+                resultTA.append(a.toString() + "\n");
+                resultTA.append("-----------------------------\n");
+            }
+        }
+
+    } else {
+        JOptionPane.showMessageDialog(this, "Please choose Name or Room.");
+    }
+    }//GEN-LAST:event_searchBtnActionPerformed
 
     /**
      * @param args the command line arguments

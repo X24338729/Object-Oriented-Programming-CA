@@ -3,10 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package homeenergymanagerapp.appliances;
+import javax.swing.JOptionPane;
 
 /**
+ * Shows all appliances and lets the user delete one by name.
  *
- * @author emrec
+ * @author Emre Cholakoglu
  */
 public class ViewAppliancesGUI extends javax.swing.JFrame {
     
@@ -16,8 +18,25 @@ public class ViewAppliancesGUI extends javax.swing.JFrame {
      * Creates new form ViewAppliancesGUI
      */
     public ViewAppliancesGUI() {
-        initComponents();
+    initComponents();
+    displayTA.setEditable(false);   // the user can only read the list, not type in it
+    showAllAppliances();
     }
+    
+    // writes every appliance in the list into the text area
+private void showAllAppliances() {
+    displayTA.setText("");
+
+    if (ApplianceMenuGUI.manager.getAllAppliances().isEmpty()) {
+        displayTA.setText("No appliances added yet.");
+        return;
+    }
+
+    for (Appliance a : ApplianceMenuGUI.manager.getAllAppliances()) {
+        displayTA.append(a.toString() + "\n");
+        displayTA.append("-----------------------------\n");
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,47 +71,50 @@ public class ViewAppliancesGUI extends javax.swing.JFrame {
         jLabel1.setText("Appliance Name:");
 
         displayBtn.setText("Display All");
+        displayBtn.addActionListener(this::displayBtnActionPerformed);
 
         deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(this::deleteBtnActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1)
+                .addGap(33, 33, 33)
+                .addComponent(deleteTF, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(backBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(displayBtn)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 95, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(displayBtn)))
                 .addGap(18, 18, 18)
                 .addComponent(deleteBtn)
                 .addGap(26, 26, 26))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(deleteTF, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(titleLbl))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(titleLbl)
+                .addGap(188, 188, 188))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(titleLbl)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(deleteTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                    .addComponent(deleteTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn)
                     .addComponent(displayBtn)
@@ -108,6 +130,30 @@ public class ViewAppliancesGUI extends javax.swing.JFrame {
     new ApplianceMenuGUI().setVisible(true);
     this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void displayBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBtnActionPerformed
+    showAllAppliances();
+    }//GEN-LAST:event_displayBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+    String name = deleteTF.getText();
+
+    if (name.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter the name of the appliance to delete.");
+        return;
+    }
+
+    boolean deleted = ApplianceMenuGUI.manager.deleteAppliance(name);
+
+    if (deleted) {
+        JOptionPane.showMessageDialog(this, name + " was deleted.");
+    } else {
+        JOptionPane.showMessageDialog(this, "No appliance called " + name + " was found.");
+    }
+
+    deleteTF.setText("");
+    showAllAppliances();   // refresh the list
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
