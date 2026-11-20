@@ -16,6 +16,11 @@ public class CleanEnergyApp {
     
     OptionManager optionMan = new OptionManager();
 
+    public CleanEnergyApp() {
+    
+    
+    }
+    
     public CleanEnergyApp(String name, String brand, String description, double installCost, double outputWatt) {
         this.name = name;
         this.brand = brand;
@@ -63,8 +68,6 @@ public class CleanEnergyApp {
     public void setOutputWatt(double outputWatt) {
         this.outputWatt = outputWatt;
     }
-    
-    
     
     public void CleanEnergyApp(){
         
