@@ -72,6 +72,8 @@ public class CleanEnergyApp {
     public void CleanEnergyApp(){
         
         optionMan.addSolarBrands();
+        optionMan.addHeatPumpBrands();
+        optionMan.addWindTurbineBrands();
         startApp();
         startGUI();
         

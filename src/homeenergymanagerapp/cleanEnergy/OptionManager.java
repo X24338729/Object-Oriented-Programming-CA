@@ -15,7 +15,9 @@ import java.util.ArrayList;
  */
 public class OptionManager {
     
-    public static ArrayList<SolarPanel> solar = new ArrayList<>(); 
+    public static ArrayList<SolarPanel> solar = new ArrayList<>();
+    public static ArrayList<HeatPump> heatPump = new ArrayList<>();
+    public static ArrayList<WindTurbine> windturbine = new ArrayList<>();
     
     public void addSolarBrands(){
         if (!solar.isEmpty()){ 
@@ -42,7 +44,7 @@ public class OptionManager {
         
         try{
             
-            outfile = new File("solar_Brands.txt");
+            outfile = new File("SP_Brands.txt");
             fw = new FileWriter(outfile);
             bw = new BufferedWriter(fw);
             
@@ -52,7 +54,9 @@ public class OptionManager {
                 bw.newLine();
             
             }
-        
+            
+            bw.close();
+                    
         }catch (IOException e) {
         
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
@@ -61,4 +65,97 @@ public class OptionManager {
         
         
     }
+   
+    public void addHeatPumpBrands() {
+        if (!heatPump.isEmpty()) {
+            return;
+        }
+        
+        File outfile;
+        FileWriter fw;
+        BufferedWriter bw;
+
+        HeatPump heatBrand0 = new HeatPump("", "", "", 0, 0, 1);
+        heatPump.add(heatBrand0);
+        HeatPump heatBrand1 = new HeatPump("Altherma 3 R", "Daikin", "Reliable air-to-water heat pump with high efficiency in cold climates.", 10500, 8000, 4.0);
+        heatPump.add(heatBrand1);
+        HeatPump heatBrand2 = new HeatPump("Ecodan PUZ", "Mitsubishi Electric", "Quiet inverter-driven air-to-water heat pump for homes.", 9800, 8500, 3.8);
+        heatPump.add(heatBrand2);
+        HeatPump heatBrand3 = new HeatPump("aroTHERM plus", "Vaillant", "R290 natural refrigerant heat pump with high flow temperature.", 11500, 7500, 4.2);
+        heatPump.add(heatBrand3);
+        HeatPump heatBrand4 = new HeatPump("EHS Mono", "Samsung", "Compact monobloc air-to-water heat pump for smaller homes.", 8200, 6000, 3.6);
+        heatPump.add(heatBrand4);
+        HeatPump heatBrand5 = new HeatPump("Logatherm WLW", "Bosch", "Efficient split heat pump with smart control and easy installation.", 9200, 7000, 3.7);
+        heatPump.add(heatBrand5);
+        HeatPump heatBrand6 = new HeatPump("Arotherm Split", "Viessmann", "Premium heat pump system with excellent performance and low noise.", 12500, 9000, 4.1);
+        heatPump.add(heatBrand6);
+
+        try{
+            
+            outfile = new File("HP_Brands.txt");
+            fw = new FileWriter(outfile);
+            bw = new BufferedWriter(fw);
+            
+            for(HeatPump p : heatPump){
+                
+                bw.write(p.getBrand() + "," + p.getInstallCost() + "," + p.getOutputWatt() + "," + p.getCop());
+                bw.newLine();
+            
+            }
+            
+            bw.close();
+                    
+        }catch (IOException e) {
+        
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+            
+        }
+    }
+    
+    public void addWindTurbineBrands() {
+        if (!windturbine.isEmpty()) {
+            return;
+        }
+        
+        File outfile;
+        FileWriter fw;
+        BufferedWriter bw;
+
+        WindTurbine windBrand0 = new WindTurbine("", "", "", 0, 0, 0);
+        windturbine.add(windBrand0);
+        WindTurbine windBrand1 = new WindTurbine("Aeolos-H 1kW", "Aeolos", "Horizontal-axis small wind turbine for residential use.", 3200, 1000, 4);
+        windturbine.add(windBrand1);
+        WindTurbine windBrand2 = new WindTurbine("Excel 1", "Bergey", "Durable and reliable residential wind turbine.", 4500, 1000, 5);
+        windturbine.add(windBrand2);
+        WindTurbine windBrand3 = new WindTurbine("Ampair 600", "Ampair", "Compact turbine designed for gardens and small homes.", 2200, 600, 4);
+        windturbine.add(windBrand3);
+        WindTurbine windBrand4 = new WindTurbine("QR6", "Quiet Revolution", "Vertical-axis turbine with quiet operation.", 9000, 6000, 3);
+        windturbine.add(windBrand4);
+        WindTurbine windBrand5 = new WindTurbine("Scirocco E5", "Eoltec", "Efficient small turbine for moderate wind sites.", 12000, 5000, 4);
+        windturbine.add(windBrand5);
+        WindTurbine windBrand6 = new WindTurbine("Skystream", "Southwest Windpower", "Compact residential turbine with built-in inverter.", 7500, 2400, 4);
+        windturbine.add(windBrand6);
+
+        try{
+            
+            outfile = new File("WT_Brands.txt");
+            fw = new FileWriter(outfile);
+            bw = new BufferedWriter(fw);
+            
+            for(WindTurbine w : windturbine){
+                
+                bw.write(w.getBrand() + "," + w.getInstallCost() + "," + w.getOutputWatt() + "," + w.getDailyWindTime());
+                bw.newLine();
+            
+            }
+            
+            bw.close();
+                    
+        }catch (IOException e) {
+        
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+            
+        }
+    }
+    
 }

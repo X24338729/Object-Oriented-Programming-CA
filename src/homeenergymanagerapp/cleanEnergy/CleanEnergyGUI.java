@@ -5,6 +5,10 @@
 package homeenergymanagerapp.cleanEnergy;
 
 import homeenergymanagerapp.HomeEnergyManagerApp;
+import static homeenergymanagerapp.cleanEnergy.OptionManager.heatPump;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 
@@ -21,6 +25,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
      */
     public CleanEnergyGUI() {
         initComponents();
+        Info_Field.setText("Solar Panels: Compare panel brands, enter how many panels you want and your yearly electricity use, and see your yearly savings and payback time.");
     }
 
     /**
@@ -38,6 +43,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_label = new javax.swing.JLabel();
         CE_solar_panel_button = new javax.swing.JToggleButton();
         CE_wind_panel_button = new javax.swing.JToggleButton();
+        CE_heat_pump_button = new javax.swing.JToggleButton();
         CE_card_panel = new javax.swing.JPanel();
         CE_solar_panel_card3 = new javax.swing.JPanel();
         Solar_Brand_Selector = new javax.swing.JComboBox<>();
@@ -46,288 +52,473 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Output_Field = new javax.swing.JTextField();
         SunTime_Field = new javax.swing.JTextField();
         PanelCount_Field = new javax.swing.JTextField();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jLabel49 = new javax.swing.JLabel();
+        Brand_Selector_Label = new javax.swing.JLabel();
+        Brand_Name_Label = new javax.swing.JLabel();
+        Install_Cost_Label = new javax.swing.JLabel();
+        Output_Watt_Label = new javax.swing.JLabel();
+        Daily_Sun_Time_Label = new javax.swing.JLabel();
+        Panel_Count_Label = new javax.swing.JLabel();
+        Yearly_Electricity_Label = new javax.swing.JLabel();
+        Consumption_Label = new javax.swing.JLabel();
+        Calculate_Button = new javax.swing.JButton();
         Electricity_Consumption_Field = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        Display_Field = new javax.swing.JScrollPane();
         Saving_Text = new javax.swing.JTextPane();
+        Add_Brand_Button = new javax.swing.JButton();
+        Remove_Brand_Button = new javax.swing.JButton();
+        Search_Brand_Button = new javax.swing.JButton();
+        Display_Brand_Button = new javax.swing.JButton();
+        Saving_Histort_Button = new javax.swing.JButton();
         CE_heat_pump_card = new javax.swing.JPanel();
-        CE_solar_brands4 = new javax.swing.JComboBox<>();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        Heat_Brand_Selector = new javax.swing.JComboBox<>();
+        Heat_Brand_Field = new javax.swing.JTextField();
+        Heat_Output_Field = new javax.swing.JTextField();
+        Heat_COP_Field = new javax.swing.JTextField();
+        Heat_Unit_Count_Field = new javax.swing.JTextField();
+        Heat_Brand_Selector_Label = new javax.swing.JLabel();
+        Heat_Brand_Name_Label = new javax.swing.JLabel();
+        Heat_Install_Cost_Label = new javax.swing.JLabel();
+        Heat_Output_Label = new javax.swing.JLabel();
+        COP_Label = new javax.swing.JLabel();
+        Heat_Panel_Count_Label = new javax.swing.JLabel();
+        Heat_Yearly_Electricity_Label = new javax.swing.JLabel();
+        kWh_Label = new javax.swing.JLabel();
+        Heat_Calculate_Button = new javax.swing.JButton();
+        Heat_Electricity_Consumption_Field = new javax.swing.JTextField();
+        Heat_Display_Field = new javax.swing.JScrollPane();
+        Heat_Saving_Text = new javax.swing.JTextPane();
+        Heat_Add_Brand_Button = new javax.swing.JButton();
+        Heat_Remove_Brand_Button = new javax.swing.JButton();
+        Heat_Search_Brand_Button = new javax.swing.JButton();
+        Heat_Display_Brand_Button = new javax.swing.JButton();
+        Heat_Saving_Histort_Button = new javax.swing.JButton();
+        COP_Label1 = new javax.swing.JLabel();
+        Heat_Install_Field = new javax.swing.JTextField();
         CE_wind_panel_card = new javax.swing.JPanel();
-        CE_solar_brands7 = new javax.swing.JComboBox<>();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField40 = new javax.swing.JTextField();
-        jTextField41 = new javax.swing.JTextField();
-        jTextField42 = new javax.swing.JTextField();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        CE_heat_pump_button = new javax.swing.JToggleButton();
+        Wind_Brand_Selector = new javax.swing.JComboBox<>();
+        Wind_Brand_Field = new javax.swing.JTextField();
+        Wind_Output_Field = new javax.swing.JTextField();
+        Wind_WindTime_Field = new javax.swing.JTextField();
+        Wind_Unit_Count_Field = new javax.swing.JTextField();
+        Wind_Brand_Selector_Label = new javax.swing.JLabel();
+        Wind_Brand_Label = new javax.swing.JLabel();
+        Wind_Install_Label = new javax.swing.JLabel();
+        Wind_Output_Label = new javax.swing.JLabel();
+        Time_Label = new javax.swing.JLabel();
+        Wind_Unit_Count_Label = new javax.swing.JLabel();
+        Wind_Yearly_Electricity = new javax.swing.JLabel();
+        Wind_Consumption_Label = new javax.swing.JLabel();
+        Wind_Calculate_Button = new javax.swing.JButton();
+        Wind_Electricity_Consumption_Field = new javax.swing.JTextField();
+        Wind_Display_Field = new javax.swing.JScrollPane();
+        Wind_Saving_Text = new javax.swing.JTextPane();
+        Wind_Add_Brand_Button = new javax.swing.JButton();
+        Wind_Remove_Brand_Button = new javax.swing.JButton();
+        Wind_Search_Brand_Button = new javax.swing.JButton();
+        Wind_Display_Brand_Button = new javax.swing.JButton();
+        Wind_Saving_Histort_Button = new javax.swing.JButton();
+        Daily_Wind_Label = new javax.swing.JLabel();
+        Wind_Install_Field = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Info_Field = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        CE_panel.setBackground(new java.awt.Color(234, 245, 234));
         CE_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        CE_back_button.setBackground(new java.awt.Color(84, 110, 122));
+        CE_back_button.setForeground(new java.awt.Color(255, 255, 255));
         CE_back_button.setText("Back");
+        CE_back_button.setBorderPainted(false);
+        CE_back_button.setOpaque(true);
         CE_back_button.addActionListener(this::CE_back_buttonActionPerformed);
         CE_panel.add(CE_back_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 9, 100, 35));
 
+        CE_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         CE_label.setText("Clean Energy App");
-        CE_panel.add(CE_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 6, -1, 41));
+        CE_panel.add(CE_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, -1, 41));
 
+        CE_solar_panel_button.setBackground(new java.awt.Color(236, 239, 241));
         CE_card_button_group.add(CE_solar_panel_button);
+        CE_solar_panel_button.setForeground(new java.awt.Color(38, 50, 56));
         CE_solar_panel_button.setSelected(true);
         CE_solar_panel_button.setText("Solar Panel");
+        CE_solar_panel_button.setOpaque(true);
         CE_solar_panel_button.addActionListener(this::CE_solar_panel_buttonActionPerformed);
-        CE_panel.add(CE_solar_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
+        CE_panel.add(CE_solar_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, -1, -1));
 
+        CE_wind_panel_button.setBackground(new java.awt.Color(236, 239, 241));
         CE_card_button_group.add(CE_wind_panel_button);
+        CE_wind_panel_button.setForeground(new java.awt.Color(38, 50, 56));
         CE_wind_panel_button.setText("Wind Panel");
+        CE_wind_panel_button.setOpaque(true);
         CE_wind_panel_button.addActionListener(this::CE_wind_panel_buttonActionPerformed);
-        CE_panel.add(CE_wind_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+        CE_panel.add(CE_wind_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
+
+        CE_heat_pump_button.setBackground(new java.awt.Color(236, 239, 241));
+        CE_card_button_group.add(CE_heat_pump_button);
+        CE_heat_pump_button.setForeground(new java.awt.Color(38, 50, 56));
+        CE_heat_pump_button.setText("Heat Pump");
+        CE_heat_pump_button.setOpaque(true);
+        CE_heat_pump_button.addActionListener(this::CE_heat_pump_buttonActionPerformed);
+        CE_panel.add(CE_heat_pump_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, -1, -1));
 
         CE_card_panel.setLayout(new java.awt.CardLayout());
 
+        CE_solar_panel_card3.setBackground(new java.awt.Color(234, 245, 234));
         CE_solar_panel_card3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Solar_Brand_Selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a brand", "SunPower", "LG", "Panasonic", "Jinko Solar", "Ocells", "Trina Solar" }));
+        Solar_Brand_Selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a brand", "SunPower", "LG", "Panasonic", "Jinko Solar", "Qcells", "Trina Solar" }));
         Solar_Brand_Selector.addActionListener(this::Solar_Brand_SelectorActionPerformed);
-        CE_solar_panel_card3.add(Solar_Brand_Selector, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        CE_solar_panel_card3.add(Solar_Brand_Selector, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 130, -1));
 
-        Brand_Field.setEditable(false);
         Brand_Field.addActionListener(this::Brand_FieldjTextField2ActionPerformed);
-        CE_solar_panel_card3.add(Brand_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, -1));
+        CE_solar_panel_card3.add(Brand_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 90, 30));
 
-        Install_Field.setEditable(false);
         Install_Field.addActionListener(this::Install_FieldjTextField5ActionPerformed);
-        CE_solar_panel_card3.add(Install_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 90, -1));
+        CE_solar_panel_card3.add(Install_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 90, 30));
 
-        Output_Field.setEditable(false);
         Output_Field.addActionListener(this::Output_FieldjTextField6ActionPerformed);
-        CE_solar_panel_card3.add(Output_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 90, -1));
+        CE_solar_panel_card3.add(Output_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 90, 30));
 
-        SunTime_Field.setEditable(false);
         SunTime_Field.addActionListener(this::SunTime_FieldActionPerformed);
-        CE_solar_panel_card3.add(SunTime_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 90, -1));
+        CE_solar_panel_card3.add(SunTime_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 90, 30));
 
+        PanelCount_Field.setText("0");
         PanelCount_Field.addActionListener(this::PanelCount_FieldActionPerformed);
-        CE_solar_panel_card3.add(PanelCount_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 100, -1));
+        CE_solar_panel_card3.add(PanelCount_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 100, 30));
 
-        jLabel37.setText("Add brand or select one");
-        CE_solar_panel_card3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+        Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Brand_Selector_Label.setText("Select a brand or fill the fields to add a new one");
+        CE_solar_panel_card3.add(Brand_Selector_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel38.setText("Brand name");
-        CE_solar_panel_card3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        Brand_Name_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Brand_Name_Label.setText("Brand name");
+        CE_solar_panel_card3.add(Brand_Name_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
-        jLabel39.setText("Install Cost");
-        CE_solar_panel_card3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        Install_Cost_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Install_Cost_Label.setText("Install Cost");
+        CE_solar_panel_card3.add(Install_Cost_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
 
-        jLabel40.setText("Output watt");
-        CE_solar_panel_card3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        Output_Watt_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Output_Watt_Label.setText("Output watt");
+        CE_solar_panel_card3.add(Output_Watt_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
 
-        jLabel41.setText("dailySunTime");
-        CE_solar_panel_card3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        Daily_Sun_Time_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Daily_Sun_Time_Label.setText("DailySunTime");
+        CE_solar_panel_card3.add(Daily_Sun_Time_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
 
-        jLabel42.setText("Panel count");
-        CE_solar_panel_card3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
+        Panel_Count_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Panel_Count_Label.setText(" Panel Count");
+        CE_solar_panel_card3.add(Panel_Count_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 90, -1));
 
-        jButton3.setText("Calculate");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
-        CE_solar_panel_card3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 90, -1));
+        Yearly_Electricity_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Yearly_Electricity_Label.setText(" Yearly Electricity");
+        CE_solar_panel_card3.add(Yearly_Electricity_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, 20));
 
-        jLabel49.setText("Yearly Electricity");
-        CE_solar_panel_card3.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 90, 20));
+        Consumption_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Consumption_Label.setText(" Consumption");
+        CE_solar_panel_card3.add(Consumption_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 100, -1));
+
+        Calculate_Button.setBackground(new java.awt.Color(46, 125, 50));
+        Calculate_Button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Calculate_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Calculate_Button.setText("Calculate");
+        Calculate_Button.setBorderPainted(false);
+        Calculate_Button.addActionListener(this::Calculate_ButtonActionPerformed);
+        CE_solar_panel_card3.add(Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
 
         Electricity_Consumption_Field.setText("4000");
         Electricity_Consumption_Field.addActionListener(this::Electricity_Consumption_FieldActionPerformed);
-        CE_solar_panel_card3.add(Electricity_Consumption_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 100, 20));
+        CE_solar_panel_card3.add(Electricity_Consumption_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 100, 30));
 
-        jLabel3.setText("Consumption");
-        CE_solar_panel_card3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
+        Display_Field.setViewportView(Saving_Text);
 
-        jScrollPane1.setViewportView(Saving_Text);
+        CE_solar_panel_card3.add(Display_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 240, 240));
 
-        CE_solar_panel_card3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 210, 110));
+        Add_Brand_Button.setBackground(new java.awt.Color(46, 125, 50));
+        Add_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Add_Brand_Button.setText("Add Brand");
+        Add_Brand_Button.setBorderPainted(false);
+        Add_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Add_Brand_Button.addActionListener(this::Add_Brand_ButtonActionPerformed);
+        CE_solar_panel_card3.add(Add_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 100, 40));
+
+        Remove_Brand_Button.setBackground(new java.awt.Color(198, 40, 40));
+        Remove_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Remove_Brand_Button.setText("Remove Brand");
+        Remove_Brand_Button.setBorderPainted(false);
+        Remove_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Remove_Brand_Button.addActionListener(this::Remove_Brand_ButtonActionPerformed);
+        CE_solar_panel_card3.add(Remove_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 100, 40));
+
+        Search_Brand_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Search_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Search_Brand_Button.setText("Search Brand");
+        Search_Brand_Button.setBorderPainted(false);
+        Search_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Search_Brand_Button.addActionListener(this::Search_Brand_ButtonActionPerformed);
+        CE_solar_panel_card3.add(Search_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 100, 40));
+
+        Display_Brand_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Display_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Display_Brand_Button.setText("Display Brand");
+        Display_Brand_Button.setBorderPainted(false);
+        Display_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Display_Brand_Button.addActionListener(this::Display_Brand_ButtonActionPerformed);
+        CE_solar_panel_card3.add(Display_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 100, 40));
+
+        Saving_Histort_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Saving_Histort_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Saving_Histort_Button.setText("Saving History");
+        Saving_Histort_Button.setBorderPainted(false);
+        Saving_Histort_Button.addActionListener(this::Saving_Histort_ButtonActionPerformed);
+        CE_solar_panel_card3.add(Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
 
         CE_card_panel.add(CE_solar_panel_card3, "solarCard");
 
+        CE_heat_pump_card.setBackground(new java.awt.Color(234, 245, 234));
         CE_heat_pump_card.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CE_solar_brands4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        CE_heat_pump_card.add(CE_solar_brands4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        Heat_Brand_Selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a brand", "Daikin", "Mitsubishi Electric", "Vaillant", "Samsung", "Bosch", "Viessmann" }));
+        Heat_Brand_Selector.addActionListener(this::Heat_Brand_SelectorActionPerformed);
+        CE_heat_pump_card.add(Heat_Brand_Selector, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 130, -1));
 
-        jTextField23.setText("EX Heat");
-        jTextField23.addActionListener(this::jTextField23jTextField2ActionPerformed);
-        CE_heat_pump_card.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, -1));
+        Heat_Brand_Field.addActionListener(this::Heat_Brand_FieldjTextField5ActionPerformed);
+        CE_heat_pump_card.add(Heat_Brand_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 90, 30));
 
-        jTextField24.setText("EX Heat");
-        jTextField24.addActionListener(this::jTextField24jTextField5ActionPerformed);
-        CE_heat_pump_card.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 90, -1));
+        Heat_Output_Field.addActionListener(this::Heat_Output_FieldjTextField6ActionPerformed);
+        CE_heat_pump_card.add(Heat_Output_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 90, 30));
 
-        jTextField25.setText("EX Heat");
-        jTextField25.addActionListener(this::jTextField25jTextField6ActionPerformed);
-        CE_heat_pump_card.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 90, -1));
+        Heat_COP_Field.addActionListener(this::Heat_COP_FieldActionPerformed);
+        CE_heat_pump_card.add(Heat_COP_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 90, 30));
 
-        jTextField26.setText("EX Heat");
-        jTextField26.addActionListener(this::jTextField26ActionPerformed);
-        CE_heat_pump_card.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 90, -1));
+        Heat_Unit_Count_Field.setText("0");
+        Heat_Unit_Count_Field.addActionListener(this::Heat_Unit_Count_FieldActionPerformed);
+        CE_heat_pump_card.add(Heat_Unit_Count_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 100, 30));
 
-        jTextField27.setText("EX Heat");
-        jTextField27.addActionListener(this::jTextField27ActionPerformed);
-        CE_heat_pump_card.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, -1));
+        Heat_Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Heat_Brand_Selector_Label.setText("Select a brand or fill the fields to add a new one");
+        CE_heat_pump_card.add(Heat_Brand_Selector_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel25.setText("Add brand or select one");
-        CE_heat_pump_card.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 9, -1, -1));
+        Heat_Brand_Name_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Brand_Name_Label.setText("Brand name");
+        CE_heat_pump_card.add(Heat_Brand_Name_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
-        jLabel26.setText("Brand name");
-        CE_heat_pump_card.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 46, -1, -1));
+        Heat_Install_Cost_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Install_Cost_Label.setText("Install Cost");
+        CE_heat_pump_card.add(Heat_Install_Cost_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
 
-        jLabel27.setText("Install Cost");
-        CE_heat_pump_card.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 74, -1, -1));
+        Heat_Output_Label.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        Heat_Output_Label.setText("Heating output");
+        CE_heat_pump_card.add(Heat_Output_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
 
-        jLabel28.setText("Output watt");
-        CE_heat_pump_card.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, -1, -1));
+        COP_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        COP_Label.setText("Performance");
+        CE_heat_pump_card.add(COP_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
-        jLabel29.setText("dailySunTime");
-        CE_heat_pump_card.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 153, -1, -1));
+        Heat_Panel_Count_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Panel_Count_Label.setText(" Units");
+        CE_heat_pump_card.add(Heat_Panel_Count_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 70, -1));
 
-        jLabel30.setText("panelCount");
-        CE_heat_pump_card.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 191, -1, -1));
+        Heat_Yearly_Electricity_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Yearly_Electricity_Label.setText(" Yearly Heating");
+        CE_heat_pump_card.add(Heat_Yearly_Electricity_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 110, 20));
 
-        jButton9.setText("Add brand");
-        CE_heat_pump_card.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        kWh_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        kWh_Label.setText(" kWh");
+        CE_heat_pump_card.add(kWh_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 80, -1));
 
-        jButton10.setText("Remove brand");
-        CE_heat_pump_card.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
+        Heat_Calculate_Button.setBackground(new java.awt.Color(46, 125, 50));
+        Heat_Calculate_Button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Calculate_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Heat_Calculate_Button.setText("Calculate");
+        Heat_Calculate_Button.setBorderPainted(false);
+        Heat_Calculate_Button.addActionListener(this::Heat_Calculate_ButtonActionPerformed);
+        CE_heat_pump_card.add(Heat_Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
 
-        jButton2.setText("Calculate");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        CE_heat_pump_card.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+        Heat_Electricity_Consumption_Field.setText("12000");
+        Heat_Electricity_Consumption_Field.addActionListener(this::Heat_Electricity_Consumption_FieldActionPerformed);
+        CE_heat_pump_card.add(Heat_Electricity_Consumption_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 100, 30));
 
-        jTextArea6.setColumns(20);
-        jTextArea6.setRows(5);
-        jTextArea6.setText("Heat Card");
-        jScrollPane6.setViewportView(jTextArea6);
+        Heat_Display_Field.setViewportView(Heat_Saving_Text);
 
-        CE_heat_pump_card.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 80, 160));
+        CE_heat_pump_card.add(Heat_Display_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 240, 240));
 
-        jLabel2.setText("Saving");
-        CE_heat_pump_card.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        Heat_Add_Brand_Button.setBackground(new java.awt.Color(46, 125, 50));
+        Heat_Add_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Heat_Add_Brand_Button.setText("Add Brand");
+        Heat_Add_Brand_Button.setBorderPainted(false);
+        Heat_Add_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Heat_Add_Brand_Button.addActionListener(this::Heat_Add_Brand_ButtonActionPerformed);
+        CE_heat_pump_card.add(Heat_Add_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 100, 40));
+
+        Heat_Remove_Brand_Button.setBackground(new java.awt.Color(198, 40, 40));
+        Heat_Remove_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Heat_Remove_Brand_Button.setText("Remove Brand");
+        Heat_Remove_Brand_Button.setBorderPainted(false);
+        Heat_Remove_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Heat_Remove_Brand_Button.addActionListener(this::Heat_Remove_Brand_ButtonActionPerformed);
+        CE_heat_pump_card.add(Heat_Remove_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 100, 40));
+
+        Heat_Search_Brand_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Heat_Search_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Heat_Search_Brand_Button.setText("Search Brand");
+        Heat_Search_Brand_Button.setBorderPainted(false);
+        Heat_Search_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Heat_Search_Brand_Button.addActionListener(this::Heat_Search_Brand_ButtonActionPerformed);
+        CE_heat_pump_card.add(Heat_Search_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 100, 40));
+
+        Heat_Display_Brand_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Heat_Display_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Heat_Display_Brand_Button.setText("Display Brand");
+        Heat_Display_Brand_Button.setBorderPainted(false);
+        Heat_Display_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Heat_Display_Brand_Button.addActionListener(this::Heat_Display_Brand_ButtonActionPerformed);
+        CE_heat_pump_card.add(Heat_Display_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 100, 40));
+
+        Heat_Saving_Histort_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Heat_Saving_Histort_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Heat_Saving_Histort_Button.setText("Saving History");
+        Heat_Saving_Histort_Button.setBorderPainted(false);
+        Heat_Saving_Histort_Button.addActionListener(this::Heat_Saving_Histort_ButtonActionPerformed);
+        CE_heat_pump_card.add(Heat_Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
+
+        COP_Label1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        COP_Label1.setText("Coefficient of ");
+        CE_heat_pump_card.add(COP_Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
+
+        Heat_Install_Field.addActionListener(this::Heat_Install_FieldjTextField5ActionPerformed);
+        CE_heat_pump_card.add(Heat_Install_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 90, 30));
 
         CE_card_panel.add(CE_heat_pump_card, "heatCard");
 
+        CE_wind_panel_card.setBackground(new java.awt.Color(234, 245, 234));
         CE_wind_panel_card.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CE_solar_brands7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        CE_wind_panel_card.add(CE_solar_brands7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        Wind_Brand_Selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a brand", "Aeolos", "Bergey", "Ampair", "Quiet Revolution", "Eoltec", "Southwest Windpower" }));
+        Wind_Brand_Selector.addActionListener(this::Wind_Brand_SelectorActionPerformed);
+        CE_wind_panel_card.add(Wind_Brand_Selector, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 130, -1));
 
-        jTextField38.setText("EX Wind");
-        jTextField38.addActionListener(this::jTextField38jTextField2ActionPerformed);
-        CE_wind_panel_card.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, -1));
+        Wind_Brand_Field.addActionListener(this::Wind_Brand_FieldjTextField5ActionPerformed);
+        CE_wind_panel_card.add(Wind_Brand_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 90, 30));
 
-        jTextField39.setText("EX Wind");
-        jTextField39.addActionListener(this::jTextField39jTextField5ActionPerformed);
-        CE_wind_panel_card.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 90, -1));
+        Wind_Output_Field.addActionListener(this::Wind_Output_FieldjTextField6ActionPerformed);
+        CE_wind_panel_card.add(Wind_Output_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 90, 30));
 
-        jTextField40.setText("EX Wind");
-        jTextField40.addActionListener(this::jTextField40jTextField6ActionPerformed);
-        CE_wind_panel_card.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 90, -1));
+        Wind_WindTime_Field.addActionListener(this::Wind_WindTime_FieldActionPerformed);
+        CE_wind_panel_card.add(Wind_WindTime_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 90, 30));
 
-        jTextField41.setText("EX Wind");
-        jTextField41.addActionListener(this::jTextField41ActionPerformed);
-        CE_wind_panel_card.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 90, -1));
+        Wind_Unit_Count_Field.setText("0");
+        Wind_Unit_Count_Field.addActionListener(this::Wind_Unit_Count_FieldActionPerformed);
+        CE_wind_panel_card.add(Wind_Unit_Count_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 100, 30));
 
-        jTextField42.setText("EX Wind");
-        jTextField42.addActionListener(this::jTextField42ActionPerformed);
-        CE_wind_panel_card.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, -1));
+        Wind_Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Wind_Brand_Selector_Label.setText("Select a brand or fill the fields to add a new one");
+        CE_wind_panel_card.add(Wind_Brand_Selector_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel43.setText("Add brand or select one");
-        CE_wind_panel_card.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 9, -1, -1));
+        Wind_Brand_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Brand_Label.setText("Brand name");
+        CE_wind_panel_card.add(Wind_Brand_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
-        jLabel44.setText("Brand name");
-        CE_wind_panel_card.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 46, -1, -1));
+        Wind_Install_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Install_Label.setText("Install Cost");
+        CE_wind_panel_card.add(Wind_Install_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
 
-        jLabel45.setText("Install Cost");
-        CE_wind_panel_card.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 74, -1, -1));
+        Wind_Output_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Output_Label.setText("Output Watt");
+        CE_wind_panel_card.add(Wind_Output_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
 
-        jLabel46.setText("Output watt");
-        CE_wind_panel_card.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, -1, -1));
+        Time_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Time_Label.setText("Time");
+        CE_wind_panel_card.add(Time_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
-        jLabel47.setText("dailySunTime");
-        CE_wind_panel_card.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 153, -1, -1));
+        Wind_Unit_Count_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Unit_Count_Label.setText(" Units");
+        CE_wind_panel_card.add(Wind_Unit_Count_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 90, -1));
 
-        jLabel48.setText("panelCount");
-        CE_wind_panel_card.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 191, -1, -1));
+        Wind_Yearly_Electricity.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Yearly_Electricity.setText(" Yearly Electricity");
+        CE_wind_panel_card.add(Wind_Yearly_Electricity, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 120, 20));
 
-        jButton15.setText("Add brand");
-        CE_wind_panel_card.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        Wind_Consumption_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Consumption_Label.setText(" Consumption");
+        CE_wind_panel_card.add(Wind_Consumption_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 100, -1));
 
-        jButton16.setText("Remove brand");
-        CE_wind_panel_card.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
+        Wind_Calculate_Button.setBackground(new java.awt.Color(46, 125, 50));
+        Wind_Calculate_Button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Calculate_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Wind_Calculate_Button.setText("Calculate");
+        Wind_Calculate_Button.setBorderPainted(false);
+        Wind_Calculate_Button.addActionListener(this::Wind_Calculate_ButtonActionPerformed);
+        CE_wind_panel_card.add(Wind_Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
 
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jTextArea5.setText("Wind Card");
-        jScrollPane5.setViewportView(jTextArea5);
+        Wind_Electricity_Consumption_Field.setText("12000");
+        Wind_Electricity_Consumption_Field.addActionListener(this::Wind_Electricity_Consumption_FieldActionPerformed);
+        CE_wind_panel_card.add(Wind_Electricity_Consumption_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 100, 30));
 
-        CE_wind_panel_card.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 80, 160));
+        Wind_Display_Field.setViewportView(Wind_Saving_Text);
 
-        jLabel1.setText("Saving");
-        CE_wind_panel_card.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        CE_wind_panel_card.add(Wind_Display_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 240, 240));
 
-        jButton1.setText("Calculate");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        CE_wind_panel_card.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+        Wind_Add_Brand_Button.setBackground(new java.awt.Color(46, 125, 50));
+        Wind_Add_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Wind_Add_Brand_Button.setText("Add Brand");
+        Wind_Add_Brand_Button.setBorderPainted(false);
+        Wind_Add_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Wind_Add_Brand_Button.addActionListener(this::Wind_Add_Brand_ButtonActionPerformed);
+        CE_wind_panel_card.add(Wind_Add_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 100, 40));
+
+        Wind_Remove_Brand_Button.setBackground(new java.awt.Color(198, 40, 40));
+        Wind_Remove_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Wind_Remove_Brand_Button.setText("Remove Brand");
+        Wind_Remove_Brand_Button.setBorderPainted(false);
+        Wind_Remove_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Wind_Remove_Brand_Button.addActionListener(this::Wind_Remove_Brand_ButtonActionPerformed);
+        CE_wind_panel_card.add(Wind_Remove_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 100, 40));
+
+        Wind_Search_Brand_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Wind_Search_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Wind_Search_Brand_Button.setText("Search Brand");
+        Wind_Search_Brand_Button.setBorderPainted(false);
+        Wind_Search_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Wind_Search_Brand_Button.addActionListener(this::Wind_Search_Brand_ButtonActionPerformed);
+        CE_wind_panel_card.add(Wind_Search_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 100, 40));
+
+        Wind_Display_Brand_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Wind_Display_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Wind_Display_Brand_Button.setText("Display Brand");
+        Wind_Display_Brand_Button.setBorderPainted(false);
+        Wind_Display_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Wind_Display_Brand_Button.addActionListener(this::Wind_Display_Brand_ButtonActionPerformed);
+        CE_wind_panel_card.add(Wind_Display_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 100, 40));
+
+        Wind_Saving_Histort_Button.setBackground(new java.awt.Color(84, 110, 122));
+        Wind_Saving_Histort_Button.setForeground(new java.awt.Color(242, 242, 242));
+        Wind_Saving_Histort_Button.setText("Saving History");
+        Wind_Saving_Histort_Button.setBorderPainted(false);
+        Wind_Saving_Histort_Button.addActionListener(this::Wind_Saving_Histort_ButtonActionPerformed);
+        CE_wind_panel_card.add(Wind_Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
+
+        Daily_Wind_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Daily_Wind_Label.setText("Daily Wind");
+        CE_wind_panel_card.add(Daily_Wind_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
+
+        Wind_Install_Field.addActionListener(this::Wind_Install_FieldjTextField5ActionPerformed);
+        CE_wind_panel_card.add(Wind_Install_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 90, 30));
 
         CE_card_panel.add(CE_wind_panel_card, "windCard");
 
-        CE_panel.add(CE_card_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 450, -1));
+        CE_panel.add(CE_card_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 750, 280));
 
-        jTextField1.setText("jTextField1");
-        CE_panel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 53, 588, 90));
+        Info_Field.setEditable(false);
+        jScrollPane1.setViewportView(Info_Field);
 
-        CE_card_button_group.add(CE_heat_pump_button);
-        CE_heat_pump_button.setText("Heat Pump");
-        CE_heat_pump_button.addActionListener(this::CE_heat_pump_buttonActionPerformed);
-        CE_panel.add(CE_heat_pump_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, -1, -1));
+        CE_panel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 610, 50));
 
-        getContentPane().add(CE_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(CE_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
 
         pack();
         setLocationRelativeTo(null);
@@ -336,29 +527,20 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     private void CE_solar_panel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_solar_panel_buttonActionPerformed
         // TODO add your handling code here:
         ((java.awt.CardLayout) CE_card_panel.getLayout()).show(CE_card_panel, "solarCard");
+        Info_Field.setText("Solar Panels: Compare panel brands, enter how many panels you want and your yearly electricity use, and see your yearly savings and payback time.");
     }//GEN-LAST:event_CE_solar_panel_buttonActionPerformed
 
     private void CE_wind_panel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_wind_panel_buttonActionPerformed
         // TODO add your handling code here:
         ((java.awt.CardLayout) CE_card_panel.getLayout()).show(CE_card_panel, "windCard");
+        Info_Field.setText("Wind Turbines: Compare small turbine brands. Electricity you use at home saves money on your bill and any surplus is sold back to the grid.");
     }//GEN-LAST:event_CE_wind_panel_buttonActionPerformed
 
     private void CE_heat_pump_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_heat_pump_buttonActionPerformed
         // TODO add your handling code here:
         ((java.awt.CardLayout) CE_card_panel.getLayout()).show(CE_card_panel, "heatCard");
+        Info_Field.setText("Heat Pumps: Compare heat pump brands, enter your yearly heating demand and see how much cheaper heating becomes compared to a gas boiler.");
     }//GEN-LAST:event_CE_heat_pump_buttonActionPerformed
-
-    private void jTextField23jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23jTextField2ActionPerformed
-
-    private void jTextField24jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField24jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField24jTextField5ActionPerformed
-
-    private void jTextField25jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField25jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField25jTextField6ActionPerformed
 
     private void CE_back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_back_buttonActionPerformed
         // TODO add your handling code here:
@@ -366,14 +548,6 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         homeEnergyManagerApp.startGUI();
         this.dispose();
     }//GEN-LAST:event_CE_back_buttonActionPerformed
-
-    private void jTextField27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField27ActionPerformed
-
-    private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField26ActionPerformed
 
     private void Brand_FieldjTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brand_FieldjTextField2ActionPerformed
         // TODO add your handling code here:
@@ -395,35 +569,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PanelCount_FieldActionPerformed
 
-    private void jTextField38jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField38jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField38jTextField2ActionPerformed
-
-    private void jTextField39jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField39jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField39jTextField5ActionPerformed
-
-    private void jTextField40jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField40jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField40jTextField6ActionPerformed
-
-    private void jTextField41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField41ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField41ActionPerformed
-
-    private void jTextField42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField42ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField42ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void Calculate_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Calculate_ButtonActionPerformed
         // TODO add your handling code here:
         int panelCount;
         double electricityConsumption;
@@ -454,9 +600,9 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
             solar.saveTXT("");
         
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Enter panel count and electricity consumption pls");
+            JOptionPane.showMessageDialog(null, "Fill all the empty spaces");
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_Calculate_ButtonActionPerformed
 
     private void Solar_Brand_SelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Solar_Brand_SelectorActionPerformed
         // TODO add your handling code here:
@@ -485,6 +631,501 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Electricity_Consumption_FieldActionPerformed
 
+    private void Remove_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Remove_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        int index = Solar_Brand_Selector.getSelectedIndex();
+        if (index < 1){
+        
+            JOptionPane.showMessageDialog(null, "Select a brand to remove");
+            return;
+        }
+        
+        String brandName = OptionManager.solar.get(index).getBrand();
+        
+        int answer = JOptionPane.showConfirmDialog(null,
+        "Remove " + brandName + "?", "Confirm", JOptionPane.YES_NO_OPTION);
+
+        if (answer == JOptionPane.YES_OPTION) {
+            
+            OptionManager.solar.remove(index);
+            Solar_Brand_Selector.removeItemAt(index);
+            Solar_Brand_Selector.setSelectedIndex(0); 
+ 
+        }
+    }//GEN-LAST:event_Remove_Brand_ButtonActionPerformed
+
+    private void Display_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Display_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        if (OptionManager.solar.size() <= 1){
+            
+            JOptionPane.showMessageDialog(null, "No brands to display");
+            return;
+            
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i < OptionManager.solar.size(); i++) {
+            
+            SolarPanel p = OptionManager.solar.get(i);
+            sb.append(i).append(". ").append(p.getBrand()).append(" - ").append(p.getName()).append("\n").append("   Cost: ").append(p.getInstallCost()).append(" €").append(", Output: ").append(p.getOutputWatt()).append(" W").append(", Sun: ").append((int) p.getDailySunTime()).append("\n\n");
+            
+        }
+        
+        Saving_Text.setText(sb.toString());
+        
+    }//GEN-LAST:event_Display_Brand_ButtonActionPerformed
+
+    private void Search_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        String txt = Brand_Field.getText().trim().toLowerCase();
+        if (txt.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Type a brand name to search");
+            return;
+        }
+        
+        boolean found = false;
+        for (int i = 1; i < OptionManager.solar.size(); i++) {
+            if (OptionManager.solar.get(i).getBrand().toLowerCase().contains(txt)) {
+                Solar_Brand_Selector.setSelectedIndex(i);
+                found = true;
+                break;
+            }
+        }
+        
+        if (!found) {
+            JOptionPane.showMessageDialog(null, "Brand not found");
+        }
+        
+    }//GEN-LAST:event_Search_Brand_ButtonActionPerformed
+
+    private void Add_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_Brand_ButtonActionPerformed
+        // TODO add your handling code here: 
+        try {
+            
+            String brand = Brand_Field.getText().trim();
+            double installCost = Double.parseDouble(Install_Field.getText().trim());
+            double outputWatt = Double.parseDouble(Output_Field.getText().trim());
+            int dailySunTime = (int) Double.parseDouble(SunTime_Field.getText().trim());
+            
+            if (brand.isEmpty() || installCost <= 0 || outputWatt <= 0 || dailySunTime <= 0) {
+                
+                JOptionPane.showMessageDialog(null, "Fill all the empty spaces");
+                return;
+                
+            }
+            
+            SolarPanel newPanel = new SolarPanel(brand, brand, "User added brand", installCost, outputWatt, dailySunTime);
+            OptionManager.solar.add(newPanel);
+            Solar_Brand_Selector.addItem(newPanel.getBrand());
+            Solar_Brand_Selector.setSelectedIndex(OptionManager.solar.size() - 1);
+            
+        }catch (NumberFormatException e) {
+            
+            JOptionPane.showMessageDialog(null, "Fill all the empty spaces correcly");
+            
+        }
+        
+        
+    }//GEN-LAST:event_Add_Brand_ButtonActionPerformed
+
+    private void Saving_Histort_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Saving_Histort_ButtonActionPerformed
+        // TODO add your handling code here:
+        StringBuilder sb = new StringBuilder();
+        
+        try (BufferedReader br = new BufferedReader(new FileReader("SP_Data.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            
+            Saving_Text.setText(sb.toString());
+        }catch (IOException ex) {
+            
+            JOptionPane.showMessageDialog(null, "No history yet");
+        }
+        
+        
+    }//GEN-LAST:event_Saving_Histort_ButtonActionPerformed
+
+    private void Heat_Brand_SelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Brand_SelectorActionPerformed
+        // TODO add your handling code here:
+        int index = Heat_Brand_Selector.getSelectedIndex();
+        if (index < 0) return;
+        if(index == 0){
+    
+        Heat_Brand_Field.setText("");
+        Heat_Install_Field.setText("");
+        Heat_Output_Field.setText("");
+        Heat_COP_Field.setText("");
+    
+        }else{
+            
+            HeatPump p = OptionManager.heatPump.get(index);
+            Heat_Brand_Field.setText(p.getBrand());
+            Heat_Install_Field.setText(String.valueOf(p.getInstallCost()));
+            Heat_Output_Field.setText(String.valueOf(p.getOutputWatt()));
+            Heat_COP_Field.setText(String.valueOf(p.getCop()));
+        }
+    }//GEN-LAST:event_Heat_Brand_SelectorActionPerformed
+
+    private void Heat_Brand_FieldjTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Brand_FieldjTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Heat_Brand_FieldjTextField5ActionPerformed
+
+    private void Heat_Output_FieldjTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Output_FieldjTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Heat_Output_FieldjTextField6ActionPerformed
+
+    private void Heat_COP_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_COP_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Heat_COP_FieldActionPerformed
+
+    private void Heat_Unit_Count_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Unit_Count_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Heat_Unit_Count_FieldActionPerformed
+
+    private void Heat_Calculate_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Calculate_ButtonActionPerformed
+        // TODO add your handling code here:
+        int count;
+        double heatingKwh;
+        
+        if (Heat_Brand_Selector.getSelectedIndex() <= 0) {
+            JOptionPane.showMessageDialog(null, "Select a brand first");
+            return;
+        }
+        
+        try {   
+            
+            HeatPump pump = OptionManager.heatPump.get(Heat_Brand_Selector.getSelectedIndex());
+            Calculable p = pump;
+            
+            count = Integer.parseInt(Heat_Unit_Count_Field.getText().trim());
+            pump.setUnitCount(count);
+            heatingKwh = Double.parseDouble(Heat_Electricity_Consumption_Field.getText().trim());
+
+            if (count <= 0 || heatingKwh <= 0) {
+                JOptionPane.showMessageDialog(null, "Values must be greater than 0");   
+                return;
+            }
+            
+            p.calculateAnnualSavings(count,heatingKwh);
+            Heat_Saving_Text.setText(p.printSavings());
+
+            pump.saveTXT(p.printSavings());
+            pump.saveTXT("");
+        
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Fill all the empty spaces");
+        }
+    }//GEN-LAST:event_Heat_Calculate_ButtonActionPerformed
+
+    private void Heat_Electricity_Consumption_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Electricity_Consumption_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Heat_Electricity_Consumption_FieldActionPerformed
+
+    private void Heat_Add_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Add_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        try {
+            
+            String brand = Heat_Brand_Field.getText().trim();
+            double installCost = Double.parseDouble(Heat_Install_Field.getText().trim());
+            double outputWatt = Double.parseDouble(Heat_Output_Field.getText().trim());
+            int COP = (int) Double.parseDouble(Heat_COP_Field.getText().trim());
+            
+            if (brand.isEmpty() || installCost <= 0 || outputWatt <= 0 || COP <= 0) {
+                
+                JOptionPane.showMessageDialog(null, "Fill all the empty spaces");
+                return;
+                
+            }
+            
+            HeatPump newPump = new HeatPump(brand, brand, "User added brand", installCost, outputWatt, COP);
+            OptionManager.heatPump.add(newPump);
+            Heat_Brand_Selector.addItem(newPump.getBrand());
+            Heat_Brand_Selector.setSelectedIndex(OptionManager.heatPump.size() - 1);
+            
+        }catch (NumberFormatException e) {
+            
+            JOptionPane.showMessageDialog(null, "Fill all the empty spaces correcly");
+            
+        }
+    }//GEN-LAST:event_Heat_Add_Brand_ButtonActionPerformed
+
+    private void Heat_Remove_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Remove_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        int index = Heat_Brand_Selector.getSelectedIndex();
+        if (index < 1){
+        
+            JOptionPane.showMessageDialog(null, "Select a brand to remove");
+            return;
+        }
+        
+        String brandName = OptionManager.heatPump.get(index).getBrand();
+        
+        int answer = JOptionPane.showConfirmDialog(null,
+        "Remove " + brandName + "?", "Confirm", JOptionPane.YES_NO_OPTION);
+
+        if (answer == JOptionPane.YES_OPTION) {
+            
+            OptionManager.heatPump.remove(index);
+            Heat_Brand_Selector.removeItemAt(index);
+            Heat_Brand_Selector.setSelectedIndex(0); 
+ 
+        }
+    }//GEN-LAST:event_Heat_Remove_Brand_ButtonActionPerformed
+
+    private void Heat_Search_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Search_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        String txt = Heat_Brand_Field.getText().trim().toLowerCase();
+        if (txt.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Type a brand name to search");
+            return;
+        }
+        
+        boolean found = false;
+        for (int i = 1; i < OptionManager.heatPump.size(); i++) {
+            if (OptionManager.heatPump.get(i).getBrand().toLowerCase().contains(txt)) {
+                Heat_Brand_Selector.setSelectedIndex(i);
+                found = true;
+                break;
+            }
+        }
+        
+        if (!found) {
+            JOptionPane.showMessageDialog(null, "Brand not found");
+        }
+    }//GEN-LAST:event_Heat_Search_Brand_ButtonActionPerformed
+
+    private void Heat_Display_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Display_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        if (OptionManager.heatPump.size() <= 1){
+            
+            JOptionPane.showMessageDialog(null, "No brands to display");
+            return;
+            
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i < OptionManager.heatPump.size(); i++) {
+            
+            HeatPump p = OptionManager.heatPump.get(i);
+            sb.append(i).append(". ").append(p.getBrand()).append(" - ").append(p.getName()).append("\n").append("   Cost: ").append(p.getInstallCost()).append(" €").append(", Output: ").append(p.getOutputWatt()).append(" W").append(", COP: ").append((int) p.getCop()).append("\n\n");
+            
+        }
+        
+        Heat_Saving_Text.setText(sb.toString());
+    }//GEN-LAST:event_Heat_Display_Brand_ButtonActionPerformed
+
+    private void Heat_Saving_Histort_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Saving_Histort_ButtonActionPerformed
+        // TODO add your handling code here:
+        StringBuilder sb = new StringBuilder();
+        
+        try (BufferedReader br = new BufferedReader(new FileReader("HP_Data.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            
+            Heat_Saving_Text.setText(sb.toString());
+        }catch (IOException ex) {
+            
+            JOptionPane.showMessageDialog(null, "No history yet");
+        }
+    }//GEN-LAST:event_Heat_Saving_Histort_ButtonActionPerformed
+
+    private void Heat_Install_FieldjTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Install_FieldjTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Heat_Install_FieldjTextField5ActionPerformed
+
+    private void Wind_Brand_SelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Brand_SelectorActionPerformed
+        // TODO add your handling code here:
+        int index = Wind_Brand_Selector.getSelectedIndex();
+        if (index < 0) return;
+        if(index == 0){
+    
+        Wind_Brand_Field.setText("");
+        Wind_Install_Field.setText("");
+        Wind_Output_Field.setText("");
+        Wind_WindTime_Field.setText("");
+    
+        }else{
+            
+            WindTurbine w = OptionManager.windturbine.get(index);
+            Wind_Brand_Field.setText(w.getBrand());
+            Wind_Install_Field.setText(String.valueOf(w.getInstallCost()));
+            Wind_Output_Field.setText(String.valueOf(w.getOutputWatt()));
+            Wind_WindTime_Field.setText(String.valueOf(w.getDailyWindTime()));
+        }
+    }//GEN-LAST:event_Wind_Brand_SelectorActionPerformed
+
+    private void Wind_Brand_FieldjTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Brand_FieldjTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Wind_Brand_FieldjTextField5ActionPerformed
+
+    private void Wind_Output_FieldjTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Output_FieldjTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Wind_Output_FieldjTextField6ActionPerformed
+
+    private void Wind_WindTime_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_WindTime_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Wind_WindTime_FieldActionPerformed
+
+    private void Wind_Unit_Count_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Unit_Count_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Wind_Unit_Count_FieldActionPerformed
+
+    private void Wind_Calculate_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Calculate_ButtonActionPerformed
+        // TODO add your handling code here:
+        int count;
+        double electricityConsumption;
+        
+        if (Wind_Brand_Selector.getSelectedIndex() <= 0) {
+            JOptionPane.showMessageDialog(null, "Select a brand first");
+            return;
+        }
+        
+        try {   
+            
+            WindTurbine turbine = OptionManager.windturbine.get(Wind_Brand_Selector.getSelectedIndex());
+            Calculable p = turbine;
+            
+            count = Integer.parseInt(Wind_Unit_Count_Field.getText().trim());
+            turbine.setTurbineCount(count);
+            electricityConsumption = Double.parseDouble(Wind_Electricity_Consumption_Field.getText().trim());
+
+            if (count <= 0 || electricityConsumption <= 0) {
+                JOptionPane.showMessageDialog(null, "Values must be greater than 0");   
+                return;
+            }
+            
+            p.calculateAnnualSavings(count,electricityConsumption);
+            Wind_Saving_Text.setText(p.printSavings());
+
+            turbine.saveTXT(p.printSavings());
+            turbine.saveTXT("");
+        
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Fill all the empty spaces");
+        }
+    }//GEN-LAST:event_Wind_Calculate_ButtonActionPerformed
+
+    private void Wind_Electricity_Consumption_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Electricity_Consumption_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Wind_Electricity_Consumption_FieldActionPerformed
+
+    private void Wind_Add_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Add_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        try {
+            
+            String brand = Wind_Brand_Field.getText().trim();
+            double installCost = Double.parseDouble(Wind_Install_Field.getText().trim());
+            double outputWatt = Double.parseDouble(Wind_Output_Field.getText().trim());
+            int windtime = (int) Double.parseDouble(Wind_WindTime_Field.getText().trim());
+            
+            if (brand.isEmpty() || installCost <= 0 || outputWatt <= 0 || windtime <= 0) {
+                
+                JOptionPane.showMessageDialog(null, "Fill all the empty spaces");
+                return;
+                
+            }
+            
+            WindTurbine newTurbine = new WindTurbine(brand, brand, "User added brand", installCost, outputWatt, windtime);
+            OptionManager.windturbine.add(newTurbine);
+            Wind_Brand_Selector.addItem(newTurbine.getBrand());
+            Wind_Brand_Selector.setSelectedIndex(OptionManager.windturbine.size() - 1);
+            
+        }catch (NumberFormatException e) {
+            
+            JOptionPane.showMessageDialog(null, "Fill all the empty spaces correcly");
+            
+        }
+    }//GEN-LAST:event_Wind_Add_Brand_ButtonActionPerformed
+
+    private void Wind_Remove_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Remove_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        int index = Wind_Brand_Selector.getSelectedIndex();
+        if (index < 1){
+        
+            JOptionPane.showMessageDialog(null, "Select a brand to remove");
+            return;
+        }
+        
+        String brandName = OptionManager.windturbine.get(index).getBrand();
+        
+        int answer = JOptionPane.showConfirmDialog(null,
+        "Remove " + brandName + "?", "Confirm", JOptionPane.YES_NO_OPTION);
+
+        if (answer == JOptionPane.YES_OPTION) {
+            
+            OptionManager.windturbine.remove(index);
+            Wind_Brand_Selector.removeItemAt(index);
+            Wind_Brand_Selector.setSelectedIndex(0); 
+ 
+        }
+    }//GEN-LAST:event_Wind_Remove_Brand_ButtonActionPerformed
+
+    private void Wind_Search_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Search_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        String txt = Wind_Brand_Field.getText().trim().toLowerCase();
+        if (txt.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Type a brand name to search");
+            return;
+        }
+        
+        boolean found = false;
+        for (int i = 1; i < OptionManager.windturbine.size(); i++) {
+            if (OptionManager.windturbine.get(i).getBrand().toLowerCase().contains(txt)) {
+                Wind_Brand_Selector.setSelectedIndex(i);
+                found = true;
+                break;
+            }
+        }
+        
+        if (!found) {
+            JOptionPane.showMessageDialog(null, "Brand not found");
+        }
+    }//GEN-LAST:event_Wind_Search_Brand_ButtonActionPerformed
+
+    private void Wind_Display_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Display_Brand_ButtonActionPerformed
+        // TODO add your handling code here:
+        if (OptionManager.windturbine.size() <= 1){
+            
+            JOptionPane.showMessageDialog(null, "No brands to display");
+            return;
+            
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i < OptionManager.windturbine.size(); i++) {
+            
+            WindTurbine w = OptionManager.windturbine.get(i);
+            sb.append(i).append(". ").append(w.getBrand()).append(" - ").append(w.getName()).append("\n").append("   Cost: ").append(w.getInstallCost()).append(" €").append(", Output: ").append(w.getOutputWatt()).append(" W").append(", Wind: ").append((int) w.getDailyWindTime()).append(" h/day\n\n");            
+        }
+        
+        Wind_Saving_Text.setText(sb.toString());
+    }//GEN-LAST:event_Wind_Display_Brand_ButtonActionPerformed
+
+    private void Wind_Saving_Histort_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Saving_Histort_ButtonActionPerformed
+        // TODO add your handling code here:
+        StringBuilder sb = new StringBuilder();
+        
+        try (BufferedReader br = new BufferedReader(new FileReader("WT_Data.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            
+            Wind_Saving_Text.setText(sb.toString());
+        }catch (IOException ex) {
+            
+            JOptionPane.showMessageDialog(null, "No history yet");
+        }
+    }//GEN-LAST:event_Wind_Saving_Histort_ButtonActionPerformed
+
+    private void Wind_Install_FieldjTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Install_FieldjTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Wind_Install_FieldjTextField5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -511,7 +1152,10 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Add_Brand_Button;
     private javax.swing.JTextField Brand_Field;
+    private javax.swing.JLabel Brand_Name_Label;
+    private javax.swing.JLabel Brand_Selector_Label;
     private javax.swing.JButton CE_back_button;
     private javax.swing.ButtonGroup CE_card_button_group;
     private javax.swing.JPanel CE_card_panel;
@@ -519,63 +1163,78 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     private javax.swing.JPanel CE_heat_pump_card;
     private javax.swing.JLabel CE_label;
     private javax.swing.JPanel CE_panel;
-    private javax.swing.JComboBox<String> CE_solar_brands4;
-    private javax.swing.JComboBox<String> CE_solar_brands7;
     private javax.swing.JToggleButton CE_solar_panel_button;
     private javax.swing.JPanel CE_solar_panel_card3;
     private javax.swing.JToggleButton CE_wind_panel_button;
     private javax.swing.JPanel CE_wind_panel_card;
+    private javax.swing.JLabel COP_Label;
+    private javax.swing.JLabel COP_Label1;
+    private javax.swing.JButton Calculate_Button;
+    private javax.swing.JLabel Consumption_Label;
+    private javax.swing.JLabel Daily_Sun_Time_Label;
+    private javax.swing.JLabel Daily_Wind_Label;
+    private javax.swing.JButton Display_Brand_Button;
+    private javax.swing.JScrollPane Display_Field;
     private javax.swing.JTextField Electricity_Consumption_Field;
+    private javax.swing.JButton Heat_Add_Brand_Button;
+    private javax.swing.JTextField Heat_Brand_Field;
+    private javax.swing.JLabel Heat_Brand_Name_Label;
+    private javax.swing.JComboBox<String> Heat_Brand_Selector;
+    private javax.swing.JLabel Heat_Brand_Selector_Label;
+    private javax.swing.JTextField Heat_COP_Field;
+    private javax.swing.JButton Heat_Calculate_Button;
+    private javax.swing.JButton Heat_Display_Brand_Button;
+    private javax.swing.JScrollPane Heat_Display_Field;
+    private javax.swing.JTextField Heat_Electricity_Consumption_Field;
+    private javax.swing.JLabel Heat_Install_Cost_Label;
+    private javax.swing.JTextField Heat_Install_Field;
+    private javax.swing.JTextField Heat_Output_Field;
+    private javax.swing.JLabel Heat_Output_Label;
+    private javax.swing.JLabel Heat_Panel_Count_Label;
+    private javax.swing.JButton Heat_Remove_Brand_Button;
+    private javax.swing.JButton Heat_Saving_Histort_Button;
+    private javax.swing.JTextPane Heat_Saving_Text;
+    private javax.swing.JButton Heat_Search_Brand_Button;
+    private javax.swing.JTextField Heat_Unit_Count_Field;
+    private javax.swing.JLabel Heat_Yearly_Electricity_Label;
+    private javax.swing.JTextPane Info_Field;
+    private javax.swing.JLabel Install_Cost_Label;
     private javax.swing.JTextField Install_Field;
     private javax.swing.JTextField Output_Field;
+    private javax.swing.JLabel Output_Watt_Label;
     private javax.swing.JTextField PanelCount_Field;
+    private javax.swing.JLabel Panel_Count_Label;
+    private javax.swing.JButton Remove_Brand_Button;
+    private javax.swing.JButton Saving_Histort_Button;
     private javax.swing.JTextPane Saving_Text;
+    private javax.swing.JButton Search_Brand_Button;
     private javax.swing.JComboBox<String> Solar_Brand_Selector;
     private javax.swing.JTextField SunTime_Field;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel Time_Label;
+    private javax.swing.JButton Wind_Add_Brand_Button;
+    private javax.swing.JTextField Wind_Brand_Field;
+    private javax.swing.JLabel Wind_Brand_Label;
+    private javax.swing.JComboBox<String> Wind_Brand_Selector;
+    private javax.swing.JLabel Wind_Brand_Selector_Label;
+    private javax.swing.JButton Wind_Calculate_Button;
+    private javax.swing.JLabel Wind_Consumption_Label;
+    private javax.swing.JButton Wind_Display_Brand_Button;
+    private javax.swing.JScrollPane Wind_Display_Field;
+    private javax.swing.JTextField Wind_Electricity_Consumption_Field;
+    private javax.swing.JTextField Wind_Install_Field;
+    private javax.swing.JLabel Wind_Install_Label;
+    private javax.swing.JTextField Wind_Output_Field;
+    private javax.swing.JLabel Wind_Output_Label;
+    private javax.swing.JButton Wind_Remove_Brand_Button;
+    private javax.swing.JButton Wind_Saving_Histort_Button;
+    private javax.swing.JTextPane Wind_Saving_Text;
+    private javax.swing.JButton Wind_Search_Brand_Button;
+    private javax.swing.JTextField Wind_Unit_Count_Field;
+    private javax.swing.JLabel Wind_Unit_Count_Label;
+    private javax.swing.JTextField Wind_WindTime_Field;
+    private javax.swing.JLabel Wind_Yearly_Electricity;
+    private javax.swing.JLabel Yearly_Electricity_Label;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
-    private javax.swing.JTextField jTextField42;
+    private javax.swing.JLabel kWh_Label;
     // End of variables declaration//GEN-END:variables
 }
