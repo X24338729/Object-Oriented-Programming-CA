@@ -26,30 +26,30 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="backBtn" min="-2" pref="225" max="-2" attributes="0"/>
-                          <Component id="reportBtn" min="-2" pref="225" max="-2" attributes="0"/>
-                          <Component id="searchBtn" min="-2" pref="225" max="-2" attributes="0"/>
-                          <Component id="viewBtn" min="-2" pref="225" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="addBtn" min="-2" pref="225" max="-2" attributes="0"/>
+                          <Component id="viewBtn" min="-2" pref="225" max="-2" attributes="0"/>
+                          <Component id="searchBtn" min="-2" pref="225" max="-2" attributes="0"/>
+                          <Component id="reportBtn" min="-2" pref="225" max="-2" attributes="0"/>
+                          <Component id="backBtn" min="-2" pref="225" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="280" max="-2" attributes="0"/>
                       <Component id="titleLbl" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="145" max="32767" attributes="0"/>
+              <EmptySpace pref="309" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="titleLbl" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+              <EmptySpace pref="89" max="32767" attributes="0"/>
               <Component id="addBtn" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="viewBtn" min="-2" pref="35" max="-2" attributes="0"/>
@@ -59,7 +59,7 @@
               <Component id="reportBtn" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="backBtn" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="111" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

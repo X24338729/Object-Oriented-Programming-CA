@@ -9,7 +9,8 @@ import java.io.Serializable;
  * @author Emre Cholakoglu
  */
 public abstract class Appliance implements EnergyConsumer, Serializable {
-
+    // approximate kg of CO2 for 1 kWh of electricity in Ireland (SEAI, 2025 provisional)
+    public static final double CO2_PER_KWH = 0.18;
     private String name;
     private String room;
     private double watts;
@@ -31,6 +32,18 @@ public abstract class Appliance implements EnergyConsumer, Serializable {
     // monthly cost = daily kWh x 30 days x electricity rate
     public double getMonthlyCost(double rate) {
         return getDailyKWh() * 30 * rate;
+    }
+    // monthly CO2 in kg = daily kWh x 30 days x CO2 per kWh
+    public double getMonthlyCO2() {
+        return getDailyKWh() * 30 * CO2_PER_KWH;
+    }
+    // how much money is saved per month if the appliance is used 1 hour less each day
+    public double getSavingOneHourLess(double rate) {
+    if (hoursPerDay <= 1) {
+        return getMonthlyCost(rate);   // used 1 hour or less, so the saving is the whole cost
+    }
+    double kWhPerHour = getDailyKWh() / hoursPerDay;
+    return kWhPerHour * 30 * rate;
     }
 
     // every type of appliance gives a different tip, so the subclasses will write this
