@@ -110,7 +110,7 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
     private void CleanEnergyApp_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CleanEnergyApp_buttonActionPerformed
         // TODO add your handling code here:
         CleanEnergyApp cleanEnergyApp = new CleanEnergyApp();
-        cleanEnergyApp.startGUI();
+        cleanEnergyApp.CleanEnergyApp();
         this.dispose();
     }//GEN-LAST:event_CleanEnergyApp_buttonActionPerformed
 

@@ -103,6 +103,23 @@ public class ApplianceManager {
     }
     return total;
     }
+    // adds up the monthly CO2 of all appliances
+    public double getTotalMonthlyCO2() {
+        double total = 0;
+    for (Appliance a : appliances) {
+        total = total + a.getMonthlyCO2();
+    }
+    return total;
+    }
+    
+    // total money saved per month if every appliance is used 1 hour less each day
+    public double getTotalSavingOneHourLess(double rate) {
+    double total = 0;
+    for (Appliance a : appliances) {
+        total = total + a.getSavingOneHourLess(rate);
+    }
+    return total;
+    }   
 
     // ---------- FILE ----------
     // saves the whole list to a file
