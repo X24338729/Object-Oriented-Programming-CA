@@ -1,0 +1,82 @@
+Brand: Samsung
+Old heating cost: 1560.00 €
+Heat pump cost: 1266.67 €
+Yearly Saving: 293.33 €
+Payback Years: 28.0 years
+
+Brand: Samsung
+Old heating cost: 1560.00 €
+Heat pump cost: 1266.67 €
+Yearly Saving: 293.33 €
+Payback Years: 28.0 years
+
+Brand: Samsung
+Old heating cost: 1560.00 €
+Heat pump cost: 1266.67 €
+Yearly Saving: 293.33 €
+Payback Years: 28.0 years
+
+Brand: Bosch
+Old heating cost: 1560.00 €
+New heating cost: 1232.43 €
+Yearly Saving: 327.57 €
+Payback Years: 28.1 years
+
+Brand: Daikin
+Old heating cost: 1560.00 €
+New heating cost: 1140.00 €
+Yearly Saving: 420.00 €
+Payback Years: 25.0 years
+
+Brand: Viessmann
+Old heating cost: 1560.00 €
+New heating cost: 1112.20 €
+Yearly Saving: 447.80 €
+Payback Years: 27.9 years
+
+Brand: Viessmann
+Old heating cost: 1560.00 €
+New heating cost: 1112.20 €
+Yearly Saving: 447.80 €
+Payback Years: 55.8 years
+
+Brand: Viessmann
+Old heating cost: 1560.00 €
+New heating cost: 1112.20 €
+Yearly Saving: 447.80 €
+Payback Years: 27.9 years
+
+Brand: Viessmann
+Old heating cost: 1560.00 €
+New heating cost: 1112.20 €
+Yearly Saving: 447.80 €
+Payback Years: 55.8 years
+
+Brand: Daikin
+Old heating cost: 1560.00 €
+New heating cost: 1140.00 €
+Yearly Saving: 420.00 €
+Payback Years: 25.0 years
+
+Brand: Daikin
+Old heating cost: 1560.00 €
+New heating cost: 1140.00 €
+Yearly Saving: 420.00 €
+Payback Years: 50.0 years
+
+Brand: Vaillant
+Units: 1
+Produced heat: 11250 kWh
+Old heating cost: 1560.00 €
+New heating cost: 1085.71 €
+Yearly Saving: 474.29 €
+Payback Years: 24.2 years
+
+Brand: Vaillant
+Units: 2
+Produced heat: 22500 kWh
+Old heating cost: 1560.00 €
+New heating cost: 1085.71 €
+Yearly Saving: 474.29 €
+Payback Years: 48.5 years
+
