@@ -13,9 +13,10 @@ import javax.swing.JOptionPane;
  */
 public class SolarPanel extends CleanEnergyApp implements Calculable{
     
-    private double annualKw, yearlySaving, dailySunTime, paybackYears, totalCost;
+    private double annualKw, yearlySaving, dailySunTime, paybackYears, totalCost,usedKwh, surplusKwh, savedMoney, exportIncome;
     private int panelCount;
     private final double electricFee = 0.38;
+    private final double exportFee = 0.15;
 
     public SolarPanel(String name, String brand, String description,double installCost, double outputWatt, int dailySunTime) {
         
@@ -32,12 +33,12 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
         this.annualKw = annualKw;
     }
 
-    public double getSaving() {
+    public double getYearlySaving() {
         return yearlySaving;
     }
 
-    public void setSaving(double saving) {
-        this.yearlySaving = saving;
+    public void setYearlySaving(double yearlySaving) {
+        this.yearlySaving = yearlySaving;
     }
 
     public double getDailySunTime() {
@@ -48,6 +49,54 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
         this.dailySunTime = dailySunTime;
     }
 
+    public double getPaybackYears() {
+        return paybackYears;
+    }
+
+    public void setPaybackYears(double paybackYears) {
+        this.paybackYears = paybackYears;
+    }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public double getUsedKwh() {
+        return usedKwh;
+    }
+
+    public void setUsedKwh(double usedKwh) {
+        this.usedKwh = usedKwh;
+    }
+
+    public double getSurplusKwh() {
+        return surplusKwh;
+    }
+
+    public void setSurplusKwh(double surplusKwh) {
+        this.surplusKwh = surplusKwh;
+    }
+
+    public double getSavedMoney() {
+        return savedMoney;
+    }
+
+    public void setSavedMoney(double savedMoney) {
+        this.savedMoney = savedMoney;
+    }
+
+    public double getExportIncome() {
+        return exportIncome;
+    }
+
+    public void setExportIncome(double exportIncome) {
+        this.exportIncome = exportIncome;
+    }
+
     public int getPanelCount() {
         return panelCount;
     }
@@ -56,14 +105,22 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
         this.panelCount = panelCount;
     }
 
+    
+
 
     @Override
     public void calculateAnnualSavings(int panelCount,double electricityConsumption) { 
         
         annualKw = (outputWatt / 1000.0) * dailySunTime * 365 * panelCount;
-        yearlySaving = annualKw * electricFee;
+        usedKwh = Math.min(annualKw, electricityConsumption);
+        surplusKwh = annualKw - usedKwh;
+
+        savedMoney = usedKwh * electricFee;
+        exportIncome = surplusKwh * exportFee;
+        yearlySaving = savedMoney + exportIncome;
+
         totalCost = installCost * panelCount;
-        paybackYears = totalCost / yearlySaving;
+        paybackYears = yearlySaving > 0 ? totalCost / yearlySaving : 0;
 
     }
     
@@ -88,8 +145,7 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
     @Override
     public String printSavings(){
     
-        return "Brand: " + brand + "\nPanel Count: " + panelCount + "\nTotal install Cost: " + String.format("%.2f", totalCost) + " €\n"+ "Yearly Saving: " + String.format("%.2f", yearlySaving) + " €\n" + "Payback Years: " + String.format("%.1f", paybackYears) + " years";
-    
+        return "Brand: " + brand + "\nPanel Count: " + panelCount + "\nProduced: " + String.format("%.0f", annualKw) + " kWh" + "\nSurplus sold: " + String.format("%.0f", surplusKwh) + " kWh" + "\nSaved on bill: " + String.format("%.2f", savedMoney) + " €" + "\nExport income: " + String.format("%.2f", exportIncome) + " €" + "\nTotal install Cost: " + String.format("%.2f", totalCost) + " €" + "\nYearly Benefit: " + String.format("%.2f", yearlySaving) + " €" + "\nPayback Years: " + String.format("%.1f", paybackYears) + " years";    
     }
             
 }

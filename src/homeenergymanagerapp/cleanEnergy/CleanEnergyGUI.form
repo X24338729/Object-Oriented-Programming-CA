@@ -55,6 +55,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Back"/>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
@@ -370,6 +371,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Calculate"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Calculate_ButtonActionPerformed"/>
@@ -419,6 +421,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Add Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -442,6 +445,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Remove Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -465,6 +469,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Search Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -488,6 +493,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Display Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -511,6 +517,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Saving History"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Saving_Histort_ButtonActionPerformed"/>
@@ -725,6 +732,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Calculate"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Heat_Calculate_ButtonActionPerformed"/>
@@ -774,6 +782,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Add Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -797,6 +806,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Remove Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -820,6 +830,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Search Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -843,6 +854,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Display Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -866,6 +878,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Saving History"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Heat_Saving_Histort_ButtonActionPerformed"/>
@@ -1103,6 +1116,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Calculate"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Wind_Calculate_ButtonActionPerformed"/>
@@ -1152,6 +1166,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Add Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -1175,6 +1190,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Remove Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -1198,6 +1214,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Search Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -1221,6 +1238,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Display Brand"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[0, 0, 0, 0]"/>
                     </Property>
@@ -1244,6 +1262,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Saving History"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Wind_Saving_Histort_ButtonActionPerformed"/>

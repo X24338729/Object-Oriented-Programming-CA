@@ -132,6 +132,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_back_button.setForeground(new java.awt.Color(255, 255, 255));
         CE_back_button.setText("Back");
         CE_back_button.setBorderPainted(false);
+        CE_back_button.setFocusPainted(false);
         CE_back_button.setOpaque(true);
         CE_back_button.addActionListener(this::CE_back_buttonActionPerformed);
         CE_panel.add(CE_back_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 9, 100, 35));
@@ -227,6 +228,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Calculate_Button.setForeground(new java.awt.Color(242, 242, 242));
         Calculate_Button.setText("Calculate");
         Calculate_Button.setBorderPainted(false);
+        Calculate_Button.setFocusPainted(false);
         Calculate_Button.addActionListener(this::Calculate_ButtonActionPerformed);
         CE_solar_panel_card3.add(Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
 
@@ -242,6 +244,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Add_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Add_Brand_Button.setText("Add Brand");
         Add_Brand_Button.setBorderPainted(false);
+        Add_Brand_Button.setFocusPainted(false);
         Add_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Add_Brand_Button.addActionListener(this::Add_Brand_ButtonActionPerformed);
         CE_solar_panel_card3.add(Add_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 100, 40));
@@ -250,6 +253,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Remove_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Remove_Brand_Button.setText("Remove Brand");
         Remove_Brand_Button.setBorderPainted(false);
+        Remove_Brand_Button.setFocusPainted(false);
         Remove_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Remove_Brand_Button.addActionListener(this::Remove_Brand_ButtonActionPerformed);
         CE_solar_panel_card3.add(Remove_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 100, 40));
@@ -258,6 +262,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Search_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Search_Brand_Button.setText("Search Brand");
         Search_Brand_Button.setBorderPainted(false);
+        Search_Brand_Button.setFocusPainted(false);
         Search_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Search_Brand_Button.addActionListener(this::Search_Brand_ButtonActionPerformed);
         CE_solar_panel_card3.add(Search_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 100, 40));
@@ -266,6 +271,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Display_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Display_Brand_Button.setText("Display Brand");
         Display_Brand_Button.setBorderPainted(false);
+        Display_Brand_Button.setFocusPainted(false);
         Display_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Display_Brand_Button.addActionListener(this::Display_Brand_ButtonActionPerformed);
         CE_solar_panel_card3.add(Display_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 100, 40));
@@ -274,6 +280,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Saving_Histort_Button.setForeground(new java.awt.Color(242, 242, 242));
         Saving_Histort_Button.setText("Saving History");
         Saving_Histort_Button.setBorderPainted(false);
+        Saving_Histort_Button.setFocusPainted(false);
         Saving_Histort_Button.addActionListener(this::Saving_Histort_ButtonActionPerformed);
         CE_solar_panel_card3.add(Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
 
@@ -336,6 +343,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Calculate_Button.setForeground(new java.awt.Color(242, 242, 242));
         Heat_Calculate_Button.setText("Calculate");
         Heat_Calculate_Button.setBorderPainted(false);
+        Heat_Calculate_Button.setFocusPainted(false);
         Heat_Calculate_Button.addActionListener(this::Heat_Calculate_ButtonActionPerformed);
         CE_heat_pump_card.add(Heat_Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
 
@@ -351,6 +359,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Add_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Heat_Add_Brand_Button.setText("Add Brand");
         Heat_Add_Brand_Button.setBorderPainted(false);
+        Heat_Add_Brand_Button.setFocusPainted(false);
         Heat_Add_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Heat_Add_Brand_Button.addActionListener(this::Heat_Add_Brand_ButtonActionPerformed);
         CE_heat_pump_card.add(Heat_Add_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 100, 40));
@@ -359,6 +368,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Remove_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Heat_Remove_Brand_Button.setText("Remove Brand");
         Heat_Remove_Brand_Button.setBorderPainted(false);
+        Heat_Remove_Brand_Button.setFocusPainted(false);
         Heat_Remove_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Heat_Remove_Brand_Button.addActionListener(this::Heat_Remove_Brand_ButtonActionPerformed);
         CE_heat_pump_card.add(Heat_Remove_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 100, 40));
@@ -367,6 +377,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Search_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Heat_Search_Brand_Button.setText("Search Brand");
         Heat_Search_Brand_Button.setBorderPainted(false);
+        Heat_Search_Brand_Button.setFocusPainted(false);
         Heat_Search_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Heat_Search_Brand_Button.addActionListener(this::Heat_Search_Brand_ButtonActionPerformed);
         CE_heat_pump_card.add(Heat_Search_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 100, 40));
@@ -375,6 +386,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Display_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Heat_Display_Brand_Button.setText("Display Brand");
         Heat_Display_Brand_Button.setBorderPainted(false);
+        Heat_Display_Brand_Button.setFocusPainted(false);
         Heat_Display_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Heat_Display_Brand_Button.addActionListener(this::Heat_Display_Brand_ButtonActionPerformed);
         CE_heat_pump_card.add(Heat_Display_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 100, 40));
@@ -383,6 +395,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Saving_Histort_Button.setForeground(new java.awt.Color(242, 242, 242));
         Heat_Saving_Histort_Button.setText("Saving History");
         Heat_Saving_Histort_Button.setBorderPainted(false);
+        Heat_Saving_Histort_Button.setFocusPainted(false);
         Heat_Saving_Histort_Button.addActionListener(this::Heat_Saving_Histort_ButtonActionPerformed);
         CE_heat_pump_card.add(Heat_Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
 
@@ -452,6 +465,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Calculate_Button.setForeground(new java.awt.Color(242, 242, 242));
         Wind_Calculate_Button.setText("Calculate");
         Wind_Calculate_Button.setBorderPainted(false);
+        Wind_Calculate_Button.setFocusPainted(false);
         Wind_Calculate_Button.addActionListener(this::Wind_Calculate_ButtonActionPerformed);
         CE_wind_panel_card.add(Wind_Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
 
@@ -467,6 +481,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Add_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Wind_Add_Brand_Button.setText("Add Brand");
         Wind_Add_Brand_Button.setBorderPainted(false);
+        Wind_Add_Brand_Button.setFocusPainted(false);
         Wind_Add_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Wind_Add_Brand_Button.addActionListener(this::Wind_Add_Brand_ButtonActionPerformed);
         CE_wind_panel_card.add(Wind_Add_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 100, 40));
@@ -475,6 +490,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Remove_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Wind_Remove_Brand_Button.setText("Remove Brand");
         Wind_Remove_Brand_Button.setBorderPainted(false);
+        Wind_Remove_Brand_Button.setFocusPainted(false);
         Wind_Remove_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Wind_Remove_Brand_Button.addActionListener(this::Wind_Remove_Brand_ButtonActionPerformed);
         CE_wind_panel_card.add(Wind_Remove_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 100, 40));
@@ -483,6 +499,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Search_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Wind_Search_Brand_Button.setText("Search Brand");
         Wind_Search_Brand_Button.setBorderPainted(false);
+        Wind_Search_Brand_Button.setFocusPainted(false);
         Wind_Search_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Wind_Search_Brand_Button.addActionListener(this::Wind_Search_Brand_ButtonActionPerformed);
         CE_wind_panel_card.add(Wind_Search_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 100, 40));
@@ -491,6 +508,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Display_Brand_Button.setForeground(new java.awt.Color(242, 242, 242));
         Wind_Display_Brand_Button.setText("Display Brand");
         Wind_Display_Brand_Button.setBorderPainted(false);
+        Wind_Display_Brand_Button.setFocusPainted(false);
         Wind_Display_Brand_Button.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Wind_Display_Brand_Button.addActionListener(this::Wind_Display_Brand_ButtonActionPerformed);
         CE_wind_panel_card.add(Wind_Display_Brand_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 100, 40));
@@ -499,6 +517,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Saving_Histort_Button.setForeground(new java.awt.Color(242, 242, 242));
         Wind_Saving_Histort_Button.setText("Saving History");
         Wind_Saving_Histort_Button.setBorderPainted(false);
+        Wind_Saving_Histort_Button.setFocusPainted(false);
         Wind_Saving_Histort_Button.addActionListener(this::Wind_Saving_Histort_ButtonActionPerformed);
         CE_wind_panel_card.add(Wind_Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
 
