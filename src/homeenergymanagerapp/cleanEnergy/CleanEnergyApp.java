@@ -74,19 +74,10 @@ public class CleanEnergyApp {
         optionMan.addSolarBrands();
         optionMan.addHeatPumpBrands();
         optionMan.addWindTurbineBrands();
-        startApp();
         startGUI();
         
     }
-    
-    
-    public void startApp(){
-    
-        
-    
-    
-    }
-    
+
     public void startGUI(){
     
         CleanEnergyGUI CEGUI = new CleanEnergyGUI();

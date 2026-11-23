@@ -5,7 +5,6 @@
 package homeenergymanagerapp.cleanEnergy;
 
 import homeenergymanagerapp.HomeEnergyManagerApp;
-import static homeenergymanagerapp.cleanEnergy.OptionManager.heatPump;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -607,8 +606,14 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
             solar.setPanelCount(panelCount);
             electricityConsumption = Double.parseDouble(Electricity_Consumption_Field.getText().trim());
 
-            if (panelCount <= 0 || electricityConsumption <= 0) {
+            if (panelCount <= 0 && electricityConsumption <= 0) {
                 JOptionPane.showMessageDialog(null, "Values must be greater than 0");   
+                return;
+            }else if (panelCount <= 0) {
+                JOptionPane.showMessageDialog(null, "Panel count must be greater than 0");   
+                return;
+            }else if (electricityConsumption <= 0) {
+                JOptionPane.showMessageDialog(null, "Electricity consumption must be greater than 0");   
                 return;
             }
             
@@ -629,10 +634,10 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         if (index < 0) return;
         if(index == 0){
     
-        Brand_Field.setText("");
-        Install_Field.setText("");
-        Output_Field.setText("");
-        SunTime_Field.setText("");
+            Brand_Field.setText("");
+            Install_Field.setText("");
+            Output_Field.setText("");
+            SunTime_Field.setText("");
     
         }else{
             
@@ -822,8 +827,14 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
             pump.setUnitCount(count);
             heatingKwh = Double.parseDouble(Heat_Electricity_Consumption_Field.getText().trim());
 
-            if (count <= 0 || heatingKwh <= 0) {
+            if (count <= 0 && heatingKwh <= 0) {
                 JOptionPane.showMessageDialog(null, "Values must be greater than 0");   
+                return;
+            }else if (count <= 0) {
+                JOptionPane.showMessageDialog(null, "Count must be greater than 0");   
+                return;
+            }else if (heatingKwh <= 0) {
+                JOptionPane.showMessageDialog(null, "HeatingKwh must be greater than 0");   
                 return;
             }
             
@@ -1012,8 +1023,14 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
             turbine.setTurbineCount(count);
             electricityConsumption = Double.parseDouble(Wind_Electricity_Consumption_Field.getText().trim());
 
-            if (count <= 0 || electricityConsumption <= 0) {
+            if (count <= 0 && electricityConsumption <= 0) {
                 JOptionPane.showMessageDialog(null, "Values must be greater than 0");   
+                return;
+            }else if (count <= 0) {
+                JOptionPane.showMessageDialog(null, "Count must be greater than 0");   
+                return;
+            }else if (electricityConsumption <= 0) {
+                JOptionPane.showMessageDialog(null, "Consumption must be greater than 0");   
                 return;
             }
             

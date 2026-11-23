@@ -137,11 +137,6 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
         
     }
 
-    public String printDetails(){
-    
-        return brand +" " + name +" " + description +" " + installCost +" " + outputWatt +" " + panelCount +" " + annualKw +" " + yearlySaving +" ";
-    
-    }
     @Override
     public String printSavings(){
     
