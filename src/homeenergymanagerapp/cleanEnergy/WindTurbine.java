@@ -125,7 +125,7 @@ public class WindTurbine extends CleanEnergyApp implements Calculable {
     
     public void saveTXT(String txt){
     
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("WT_Data.txt", true))) {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("src/homeenergymanagerapp/cleanEnergy/Data/WT_Data.txt", true))) {
                 
             bw.write(txt);
             bw.newLine();

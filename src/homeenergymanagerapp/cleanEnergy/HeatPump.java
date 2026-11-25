@@ -124,7 +124,7 @@ public class HeatPump extends CleanEnergyApp implements Calculable{
     
     public void saveTXT(String txt){
     
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("HP_Data.txt", true))) {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("src/homeenergymanagerapp/cleanEnergy/Data/HP_Data.txt", true))) {
                 
             bw.write(txt);
             bw.newLine();

@@ -126,7 +126,7 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
     
     public void saveTXT(String txt){
     
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("SP_Data.txt", true))) {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("src/homeenergymanagerapp/cleanEnergy/Data/SP_Data.txt", true))) {
                 
             bw.write(txt);
             bw.newLine();

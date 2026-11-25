@@ -44,7 +44,7 @@ public class OptionManager {
         
         try{
             
-            outfile = new File("SP_Brands.txt");
+            outfile = new File("src/homeenergymanagerapp/cleanEnergy/Data/SP_Brands.txt");
             fw = new FileWriter(outfile);
             bw = new BufferedWriter(fw);
             
@@ -92,7 +92,7 @@ public class OptionManager {
 
         try{
             
-            outfile = new File("HP_Brands.txt");
+            outfile = new File("src/homeenergymanagerapp/cleanEnergy/Data/HP_Brands.txt");
             fw = new FileWriter(outfile);
             bw = new BufferedWriter(fw);
             
@@ -138,7 +138,7 @@ public class OptionManager {
 
         try{
             
-            outfile = new File("WT_Brands.txt");
+            outfile = new File("src/homeenergymanagerapp/cleanEnergy/Data/WT_Brands.txt");
             fw = new FileWriter(outfile);
             bw = new BufferedWriter(fw);
             

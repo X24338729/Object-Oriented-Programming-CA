@@ -691,7 +691,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         for (int i = 1; i < OptionManager.solar.size(); i++) {
             
             SolarPanel p = OptionManager.solar.get(i);
-            sb.append(i).append(". ").append(p.getBrand()).append(" - ").append(p.getName()).append("\n").append("   Cost: ").append(p.getInstallCost()).append(" €").append(", Output: ").append(p.getOutputWatt()).append(" W").append(", Sun: ").append((int) p.getDailySunTime()).append("\n\n");
+            sb.append(i).append(". ").append(p.getBrand()).append(" - ").append(p.getName()).append("\n").append("    Cost: ").append(p.getInstallCost()).append(" €").append("\n    Output: ").append(p.getOutputWatt()).append(" W").append("\n    Sun Time: ").append((int) p.getDailySunTime()).append("\n\n");
             
         }
         
@@ -756,7 +756,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
         
-        try (BufferedReader br = new BufferedReader(new FileReader("SP_Data.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/homeenergymanagerapp/cleanEnergy/Data/SP_Data.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 sb.append(line).append("\n");
@@ -939,7 +939,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         for (int i = 1; i < OptionManager.heatPump.size(); i++) {
             
             HeatPump p = OptionManager.heatPump.get(i);
-            sb.append(i).append(". ").append(p.getBrand()).append(" - ").append(p.getName()).append("\n").append("   Cost: ").append(p.getInstallCost()).append(" €").append(", Output: ").append(p.getOutputWatt()).append(" W").append(", COP: ").append((int) p.getCop()).append("\n\n");
+            sb.append(i).append(". ").append(p.getBrand()).append(" - ").append(p.getName()).append("\n").append("    Cost: ").append(p.getInstallCost()).append(" €").append("\n    Output: ").append(p.getOutputWatt()).append(" W").append("\n    COP: ").append((int) p.getCop()).append("\n\n");
             
         }
         
@@ -950,7 +950,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
         
-        try (BufferedReader br = new BufferedReader(new FileReader("HP_Data.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/homeenergymanagerapp/cleanEnergy/Data/HP_Data.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 sb.append(line).append("\n");
@@ -1135,7 +1135,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         for (int i = 1; i < OptionManager.windturbine.size(); i++) {
             
             WindTurbine w = OptionManager.windturbine.get(i);
-            sb.append(i).append(". ").append(w.getBrand()).append(" - ").append(w.getName()).append("\n").append("   Cost: ").append(w.getInstallCost()).append(" €").append(", Output: ").append(w.getOutputWatt()).append(" W").append(", Wind: ").append((int) w.getDailyWindTime()).append(" h/day\n\n");            
+            sb.append(i).append(". ").append(w.getBrand()).append(" - ").append(w.getName()).append("\n").append("    Cost: ").append(w.getInstallCost()).append(" €").append("\n    Output: ").append(w.getOutputWatt()).append(" W").append("\n    Wind: ").append((int) w.getDailyWindTime()).append(" h/day\n\n");            
         }
         
         Wind_Saving_Text.setText(sb.toString());
@@ -1145,7 +1145,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
         
-        try (BufferedReader br = new BufferedReader(new FileReader("WT_Data.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/homeenergymanagerapp/cleanEnergy/Data/WT_Data.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 sb.append(line).append("\n");
