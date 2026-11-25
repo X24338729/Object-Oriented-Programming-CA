@@ -1,0 +1,10 @@
+Brand: Southwest Windpower
+Turbines: 2
+Produced: 7008 kWh
+Surplus sold: 0 kWh
+Saved on bill: 2663.04 €
+Export income: 0.00 €
+Total Cost: 15000.00 €
+Yearly Benefit: 2663.04 €
+Payback Years: 5.6 years
+

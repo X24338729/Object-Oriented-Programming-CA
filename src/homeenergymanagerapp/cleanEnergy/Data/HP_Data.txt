@@ -1,0 +1,8 @@
+Brand: Daikin
+Units: 4
+Produced heat: 48000 kWh
+Old heating cost: 1560.00 €
+New heating cost: 1140.00 €
+Yearly Saving: 420.00 €
+Payback Years: 100.0 years
+

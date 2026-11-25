@@ -1,0 +1,10 @@
+Brand: SunPower
+Panel Count: 4
+Produced: 1861 kWh
+Surplus sold: 0 kWh
+Saved on bill: 707.37 €
+Export income: 0.00 €
+Total install Cost: 2200.00 €
+Yearly Benefit: 707.37 €
+Payback Years: 3.1 years
+
