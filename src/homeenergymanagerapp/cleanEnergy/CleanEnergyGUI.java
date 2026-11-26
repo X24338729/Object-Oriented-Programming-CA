@@ -68,6 +68,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Search_Brand_Button = new javax.swing.JButton();
         Display_Brand_Button = new javax.swing.JButton();
         Saving_Histort_Button = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         CE_heat_pump_card = new javax.swing.JPanel();
         Heat_Brand_Selector = new javax.swing.JComboBox<>();
         Heat_Brand_Field = new javax.swing.JTextField();
@@ -93,6 +94,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Saving_Histort_Button = new javax.swing.JButton();
         COP_Label1 = new javax.swing.JLabel();
         Heat_Install_Field = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         CE_wind_panel_card = new javax.swing.JPanel();
         Wind_Brand_Selector = new javax.swing.JComboBox<>();
         Wind_Brand_Field = new javax.swing.JTextField();
@@ -118,8 +120,10 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Saving_Histort_Button = new javax.swing.JButton();
         Daily_Wind_Label = new javax.swing.JLabel();
         Wind_Install_Field = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Info_Field = new javax.swing.JTextPane();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -190,35 +194,42 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         PanelCount_Field.addActionListener(this::PanelCount_FieldActionPerformed);
         CE_solar_panel_card3.add(PanelCount_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 100, 30));
 
-        Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Brand_Selector_Label.setText("Select a brand or fill the fields to add a new one");
         CE_solar_panel_card3.add(Brand_Selector_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Brand_Name_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Brand_Name_Label.setForeground(new java.awt.Color(190, 255, 140));
         Brand_Name_Label.setText("Brand name");
         CE_solar_panel_card3.add(Brand_Name_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
         Install_Cost_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Install_Cost_Label.setForeground(new java.awt.Color(190, 255, 140));
         Install_Cost_Label.setText("Install Cost");
         CE_solar_panel_card3.add(Install_Cost_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
 
         Output_Watt_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Output_Watt_Label.setForeground(new java.awt.Color(190, 255, 140));
         Output_Watt_Label.setText("Output watt");
         CE_solar_panel_card3.add(Output_Watt_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
 
         Daily_Sun_Time_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Daily_Sun_Time_Label.setForeground(new java.awt.Color(190, 255, 140));
         Daily_Sun_Time_Label.setText("DailySunTime");
         CE_solar_panel_card3.add(Daily_Sun_Time_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
 
         Panel_Count_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Panel_Count_Label.setForeground(new java.awt.Color(190, 255, 140));
         Panel_Count_Label.setText(" Panel Count");
         CE_solar_panel_card3.add(Panel_Count_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 90, -1));
 
         Yearly_Electricity_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Yearly_Electricity_Label.setForeground(new java.awt.Color(190, 255, 140));
         Yearly_Electricity_Label.setText(" Yearly Electricity");
         CE_solar_panel_card3.add(Yearly_Electricity_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, 20));
 
         Consumption_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Consumption_Label.setForeground(new java.awt.Color(190, 255, 140));
         Consumption_Label.setText(" Consumption");
         CE_solar_panel_card3.add(Consumption_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 100, -1));
 
@@ -229,12 +240,13 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Calculate_Button.setBorderPainted(false);
         Calculate_Button.setFocusPainted(false);
         Calculate_Button.addActionListener(this::Calculate_ButtonActionPerformed);
-        CE_solar_panel_card3.add(Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
+        CE_solar_panel_card3.add(Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 100, 40));
 
         Electricity_Consumption_Field.setText("4000");
         Electricity_Consumption_Field.addActionListener(this::Electricity_Consumption_FieldActionPerformed);
         CE_solar_panel_card3.add(Electricity_Consumption_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 100, 30));
 
+        Saving_Text.setBorder(null);
         Display_Field.setViewportView(Saving_Text);
 
         CE_solar_panel_card3.add(Display_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 240, 240));
@@ -283,6 +295,9 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Saving_Histort_Button.addActionListener(this::Saving_Histort_ButtonActionPerformed);
         CE_solar_panel_card3.add(Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CE-solar.png"))); // NOI18N
+        CE_solar_panel_card3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 280));
+
         CE_card_panel.add(CE_solar_panel_card3, "solarCard");
 
         CE_heat_pump_card.setBackground(new java.awt.Color(234, 245, 234));
@@ -305,35 +320,42 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Unit_Count_Field.addActionListener(this::Heat_Unit_Count_FieldActionPerformed);
         CE_heat_pump_card.add(Heat_Unit_Count_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 100, 30));
 
-        Heat_Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Heat_Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Heat_Brand_Selector_Label.setText("Select a brand or fill the fields to add a new one");
         CE_heat_pump_card.add(Heat_Brand_Selector_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Heat_Brand_Name_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Brand_Name_Label.setForeground(new java.awt.Color(190, 255, 140));
         Heat_Brand_Name_Label.setText("Brand name");
         CE_heat_pump_card.add(Heat_Brand_Name_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
         Heat_Install_Cost_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Install_Cost_Label.setForeground(new java.awt.Color(190, 255, 140));
         Heat_Install_Cost_Label.setText("Install Cost");
         CE_heat_pump_card.add(Heat_Install_Cost_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
 
         Heat_Output_Label.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        Heat_Output_Label.setForeground(new java.awt.Color(190, 255, 140));
         Heat_Output_Label.setText("Heating output");
         CE_heat_pump_card.add(Heat_Output_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
 
         COP_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        COP_Label.setForeground(new java.awt.Color(190, 255, 140));
         COP_Label.setText("Performance");
         CE_heat_pump_card.add(COP_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
         Heat_Panel_Count_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Panel_Count_Label.setForeground(new java.awt.Color(190, 255, 140));
         Heat_Panel_Count_Label.setText(" Units");
         CE_heat_pump_card.add(Heat_Panel_Count_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 70, -1));
 
         Heat_Yearly_Electricity_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Heat_Yearly_Electricity_Label.setForeground(new java.awt.Color(190, 255, 140));
         Heat_Yearly_Electricity_Label.setText(" Yearly Heating");
         CE_heat_pump_card.add(Heat_Yearly_Electricity_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 110, 20));
 
         kWh_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        kWh_Label.setForeground(new java.awt.Color(190, 255, 140));
         kWh_Label.setText(" kWh");
         CE_heat_pump_card.add(kWh_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 80, -1));
 
@@ -344,12 +366,13 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Calculate_Button.setBorderPainted(false);
         Heat_Calculate_Button.setFocusPainted(false);
         Heat_Calculate_Button.addActionListener(this::Heat_Calculate_ButtonActionPerformed);
-        CE_heat_pump_card.add(Heat_Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
+        CE_heat_pump_card.add(Heat_Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 100, 40));
 
         Heat_Electricity_Consumption_Field.setText("12000");
         Heat_Electricity_Consumption_Field.addActionListener(this::Heat_Electricity_Consumption_FieldActionPerformed);
         CE_heat_pump_card.add(Heat_Electricity_Consumption_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 100, 30));
 
+        Heat_Saving_Text.setBorder(null);
         Heat_Display_Field.setViewportView(Heat_Saving_Text);
 
         CE_heat_pump_card.add(Heat_Display_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 240, 240));
@@ -399,11 +422,15 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_heat_pump_card.add(Heat_Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
 
         COP_Label1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        COP_Label1.setForeground(new java.awt.Color(190, 255, 140));
         COP_Label1.setText("Coefficient of ");
         CE_heat_pump_card.add(COP_Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
 
         Heat_Install_Field.addActionListener(this::Heat_Install_FieldjTextField5ActionPerformed);
         CE_heat_pump_card.add(Heat_Install_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 90, 30));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CE-heat.png"))); // NOI18N
+        CE_heat_pump_card.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 280));
 
         CE_card_panel.add(CE_heat_pump_card, "heatCard");
 
@@ -427,35 +454,42 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Unit_Count_Field.addActionListener(this::Wind_Unit_Count_FieldActionPerformed);
         CE_wind_panel_card.add(Wind_Unit_Count_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 100, 30));
 
-        Wind_Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Wind_Brand_Selector_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Wind_Brand_Selector_Label.setText("Select a brand or fill the fields to add a new one");
         CE_wind_panel_card.add(Wind_Brand_Selector_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Wind_Brand_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Brand_Label.setForeground(new java.awt.Color(190, 255, 140));
         Wind_Brand_Label.setText("Brand name");
         CE_wind_panel_card.add(Wind_Brand_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
         Wind_Install_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Install_Label.setForeground(new java.awt.Color(190, 255, 140));
         Wind_Install_Label.setText("Install Cost");
         CE_wind_panel_card.add(Wind_Install_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
 
         Wind_Output_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Output_Label.setForeground(new java.awt.Color(190, 255, 140));
         Wind_Output_Label.setText("Output Watt");
         CE_wind_panel_card.add(Wind_Output_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
 
         Time_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Time_Label.setForeground(new java.awt.Color(190, 255, 140));
         Time_Label.setText("Time");
         CE_wind_panel_card.add(Time_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
         Wind_Unit_Count_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Unit_Count_Label.setForeground(new java.awt.Color(190, 255, 140));
         Wind_Unit_Count_Label.setText(" Units");
         CE_wind_panel_card.add(Wind_Unit_Count_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 90, -1));
 
         Wind_Yearly_Electricity.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Yearly_Electricity.setForeground(new java.awt.Color(190, 255, 140));
         Wind_Yearly_Electricity.setText(" Yearly Electricity");
         CE_wind_panel_card.add(Wind_Yearly_Electricity, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 120, 20));
 
         Wind_Consumption_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Wind_Consumption_Label.setForeground(new java.awt.Color(190, 255, 140));
         Wind_Consumption_Label.setText(" Consumption");
         CE_wind_panel_card.add(Wind_Consumption_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 100, -1));
 
@@ -466,12 +500,13 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Calculate_Button.setBorderPainted(false);
         Wind_Calculate_Button.setFocusPainted(false);
         Wind_Calculate_Button.addActionListener(this::Wind_Calculate_ButtonActionPerformed);
-        CE_wind_panel_card.add(Wind_Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, 40));
+        CE_wind_panel_card.add(Wind_Calculate_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 100, 40));
 
         Wind_Electricity_Consumption_Field.setText("12000");
         Wind_Electricity_Consumption_Field.addActionListener(this::Wind_Electricity_Consumption_FieldActionPerformed);
         CE_wind_panel_card.add(Wind_Electricity_Consumption_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 100, 30));
 
+        Wind_Saving_Text.setBorder(null);
         Wind_Display_Field.setViewportView(Wind_Saving_Text);
 
         CE_wind_panel_card.add(Wind_Display_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 240, 240));
@@ -521,20 +556,28 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_wind_panel_card.add(Wind_Saving_Histort_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 120, 20));
 
         Daily_Wind_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Daily_Wind_Label.setForeground(new java.awt.Color(190, 255, 140));
         Daily_Wind_Label.setText("Daily Wind");
         CE_wind_panel_card.add(Daily_Wind_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
 
         Wind_Install_Field.addActionListener(this::Wind_Install_FieldjTextField5ActionPerformed);
         CE_wind_panel_card.add(Wind_Install_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 90, 30));
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CE-wind.png"))); // NOI18N
+        CE_wind_panel_card.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 280));
+
         CE_card_panel.add(CE_wind_panel_card, "windCard");
 
         CE_panel.add(CE_card_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 750, 280));
 
         Info_Field.setEditable(false);
+        Info_Field.setBorder(null);
         jScrollPane1.setViewportView(Info_Field);
 
         CE_panel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 610, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CE-main.png"))); // NOI18N
+        CE_panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
 
         getContentPane().add(CE_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
 
@@ -1270,6 +1313,10 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
     private javax.swing.JTextField Wind_WindTime_Field;
     private javax.swing.JLabel Wind_Yearly_Electricity;
     private javax.swing.JLabel Yearly_Electricity_Label;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel kWh_Label;
     // End of variables declaration//GEN-END:variables
