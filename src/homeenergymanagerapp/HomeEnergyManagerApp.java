@@ -18,7 +18,7 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author 
+ * @author Alp Emre Ly
  */
 public class HomeEnergyManagerApp {
 
