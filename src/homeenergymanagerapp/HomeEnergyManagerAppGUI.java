@@ -4,6 +4,8 @@
  */
 package homeenergymanagerapp;
 
+import consumption.ConsumptionTrackerFrame;
+import homeenergymanagerapp.appliances.ApplianceManager;
 import homeenergymanagerapp.cleanEnergy.CleanEnergyApp;
 
 /**
@@ -82,7 +84,7 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
 
     private void SavingApp_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavingApp_buttonActionPerformed
         // TODO add your handling code here:
-        SavingApp savingApp = new SavingApp();
+        ApplianceManager savingApp = new ApplianceManager();
         savingApp.startGUI();
         this.dispose();
     }//GEN-LAST:event_SavingApp_buttonActionPerformed
@@ -96,7 +98,7 @@ public class HomeEnergyManagerAppGUI extends javax.swing.JFrame {
 
     private void WattWiseApp_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WattWiseApp_buttonActionPerformed
         // TODO add your handling code here:
-        WattWiseApp wattWiseApp = new WattWiseApp();
+        ConsumptionTrackerFrame wattWiseApp = new ConsumptionTrackerFrame();
         wattWiseApp.startGUI();
         this.dispose();
     }//GEN-LAST:event_WattWiseApp_buttonActionPerformed

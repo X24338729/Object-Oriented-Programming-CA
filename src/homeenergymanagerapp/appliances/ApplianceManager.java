@@ -135,4 +135,11 @@ public class ApplianceManager {
         appliances = (ArrayList<Appliance>) in.readObject();
         in.close();
     }
+    
+    public void startGUI(){
+    
+        ApplianceMenuGUI AMGUI = new ApplianceMenuGUI();
+        AMGUI.setVisible(true);
+    
+    }
 }

@@ -267,4 +267,12 @@ public class ConsumptionTrackerFrame extends JFrame {
             this.unitPrice = unitPrice;
         }
     }
+    
+    public void startGUI(){
+
+        SwingUtilities.invokeLater(() -> {
+            new ConsumptionTrackerFrame().setVisible(true);
+        });
+
+    }
 }

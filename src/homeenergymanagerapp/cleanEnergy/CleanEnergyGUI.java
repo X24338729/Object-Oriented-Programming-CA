@@ -147,7 +147,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_solar_panel_button.setText("Solar Panel");
         CE_solar_panel_button.setOpaque(true);
         CE_solar_panel_button.addActionListener(this::CE_solar_panel_buttonActionPerformed);
-        CE_panel.add(CE_solar_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, -1, -1));
+        CE_panel.add(CE_solar_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 100, -1));
 
         CE_wind_panel_button.setBackground(new java.awt.Color(236, 239, 241));
         CE_card_button_group.add(CE_wind_panel_button);
@@ -155,7 +155,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_wind_panel_button.setText("Wind Panel");
         CE_wind_panel_button.setOpaque(true);
         CE_wind_panel_button.addActionListener(this::CE_wind_panel_buttonActionPerformed);
-        CE_panel.add(CE_wind_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
+        CE_panel.add(CE_wind_panel_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 100, -1));
 
         CE_heat_pump_button.setBackground(new java.awt.Color(236, 239, 241));
         CE_card_button_group.add(CE_heat_pump_button);
@@ -163,7 +163,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         CE_heat_pump_button.setText("Heat Pump");
         CE_heat_pump_button.setOpaque(true);
         CE_heat_pump_button.addActionListener(this::CE_heat_pump_buttonActionPerformed);
-        CE_panel.add(CE_heat_pump_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, -1, -1));
+        CE_panel.add(CE_heat_pump_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 100, -1));
 
         CE_card_panel.setLayout(new java.awt.CardLayout());
 
