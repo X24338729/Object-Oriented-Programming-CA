@@ -7,17 +7,25 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+
 /**
+ * Solar panel product. Extends CleanEnergyApp and implements
+ * Calculable to work out yearly savings and payback time.
  *
- * @author author Alpsan Karademir
+ * @author Alpsan Karademir
  */
+
 public class SolarPanel extends CleanEnergyApp implements Calculable{
     
+    // Fields used for the panel data and calculation results
     private double annualKw, yearlySaving, dailySunTime, paybackYears, totalCost,usedKwh, surplusKwh, savedMoney, exportIncome;
     private int panelCount;
+    
+    // Fixed prices per kWh: buying electricity and selling surplus to the grid
     private final double electricFee = 0.38;
     private final double exportFee = 0.15;
 
+    // super() sets the shared fields, daily sun time belongs to this class
     public SolarPanel(String name, String brand, String description,double installCost, double outputWatt, int dailySunTime) {
         
         super(name, brand, description, installCost, outputWatt);
@@ -25,6 +33,7 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
         
     }
 
+    // Getters and setters
     public double getAnnualKw() {
         return annualKw;
     }
@@ -105,9 +114,11 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
         this.panelCount = panelCount;
     }
 
-    
-
-
+    // From the Calculable interface.
+    // Yearly production = kW x daily sun hours x 365 x panel count.
+    // Math.min stops used energy being higher than the home's consumption.
+    // Extra energy is sold. Benefit = bill saving + export income.
+    // Payback = total install cost / yearly benefit.
     @Override
     public void calculateAnnualSavings(int panelCount,double electricityConsumption) { 
         
@@ -124,6 +135,7 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
 
     }
     
+    // File writing: adds the result to the history file without deleting old ones
     public void saveTXT(String txt){
     
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("src/homeenergymanagerapp/cleanEnergy/Data/SP_Data.txt", true))) {
@@ -137,6 +149,7 @@ public class SolarPanel extends CleanEnergyApp implements Calculable{
         
     }
 
+    // From the Calculable interface. Returns the results as text for the GUI and file.
     @Override
     public String printSavings(){
     

@@ -10,11 +10,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
-
 /**
+ * Main window of the Clean Energy section.
+ * Uses CardLayout to show the Solar, Wind and Heat Pump panels.
  *
- * @author AlpsanKarademir
+ * @author Alpsan Karademir
  */
+
 public class CleanEnergyGUI extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CleanEnergyGUI.class.getName());
@@ -24,6 +26,8 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
      */
     public CleanEnergyGUI() {
         initComponents();
+        
+        // Builds the window and shows the solar info text first
         Info_Field.setText("Solar Panels: Compare panel brands, enter how many panels you want and your yearly electricity use, and see your yearly savings and payback time.");
     }
 
@@ -625,24 +629,28 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    // Navigation: shows the solar card and its info text
     private void CE_solar_panel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_solar_panel_buttonActionPerformed
         // TODO add your handling code here:
         ((java.awt.CardLayout) CE_card_panel.getLayout()).show(CE_card_panel, "solarCard");
         Info_Field.setText("Solar Panels: Compare panel brands, enter how many panels you want and your yearly electricity use, and see your yearly savings and payback time.");
     }//GEN-LAST:event_CE_solar_panel_buttonActionPerformed
 
+    // Navigation: shows the wind card and its info text
     private void CE_wind_panel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_wind_panel_buttonActionPerformed
         // TODO add your handling code here:
         ((java.awt.CardLayout) CE_card_panel.getLayout()).show(CE_card_panel, "windCard");
         Info_Field.setText("Wind Turbines: Compare small turbine brands. Electricity you use at home saves money on your bill and any surplus is sold back to the grid.");
     }//GEN-LAST:event_CE_wind_panel_buttonActionPerformed
 
+    // Navigation: shows the heat pump card and its info text
     private void CE_heat_pump_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_heat_pump_buttonActionPerformed
         // TODO add your handling code here:
         ((java.awt.CardLayout) CE_card_panel.getLayout()).show(CE_card_panel, "heatCard");
         Info_Field.setText("Heat Pumps: Compare heat pump brands, enter your yearly heating demand and see how much cheaper heating becomes compared to a gas boiler.");
     }//GEN-LAST:event_CE_heat_pump_buttonActionPerformed
 
+    // Goes back to the main menu and closes this window
     private void CE_back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CE_back_buttonActionPerformed
         // TODO add your handling code here:
         HomeEnergyManagerApp homeEnergyManagerApp = new HomeEnergyManagerApp();
@@ -670,6 +678,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PanelCount_FieldActionPerformed
 
+    // Validates input, calculates through Calculable, shows and saves the result
     private void Calculate_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Calculate_ButtonActionPerformed
         // TODO add your handling code here:
         int panelCount;
@@ -711,6 +720,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Calculate_ButtonActionPerformed
 
+    // Fills the text fields with the selected brand, or clears them
     private void Solar_Brand_SelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Solar_Brand_SelectorActionPerformed
         // TODO add your handling code here:
         int index = Solar_Brand_Selector.getSelectedIndex();
@@ -738,6 +748,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Electricity_Consumption_FieldActionPerformed
 
+    // Delete: asks for confirmation, then removes from the ArrayList and combo box
     private void Remove_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Remove_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         int index = Solar_Brand_Selector.getSelectedIndex();
@@ -761,6 +772,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Remove_Brand_ButtonActionPerformed
 
+    // Display: loops through the ArrayList and shows all brands
     private void Display_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Display_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         if (OptionManager.solar.size() <= 1){
@@ -782,6 +794,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Display_Brand_ButtonActionPerformed
 
+    // Search: selects the first brand name containing the typed text
     private void Search_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         String txt = Brand_Field.getText().trim().toLowerCase();
@@ -805,6 +818,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Search_Brand_ButtonActionPerformed
 
+    // Add: checks the input, creates a new object and adds it to the list
     private void Add_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_Brand_ButtonActionPerformed
         // TODO add your handling code here: 
         try {
@@ -835,6 +849,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Add_Brand_ButtonActionPerformed
 
+    // File reading: reads the saved results line by line
     private void Saving_Histort_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Saving_Histort_ButtonActionPerformed
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
@@ -854,6 +869,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Saving_Histort_ButtonActionPerformed
 
+    // Fills the text fields with the selected brand, or clears them
     private void Heat_Brand_SelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Brand_SelectorActionPerformed
         // TODO add your handling code here:
         int index = Heat_Brand_Selector.getSelectedIndex();
@@ -891,6 +907,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Heat_Unit_Count_FieldActionPerformed
 
+    // Validates input, calculates through Calculable, shows and saves the result
     private void Heat_Calculate_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Calculate_ButtonActionPerformed
         // TODO add your handling code here:
         int count;
@@ -936,6 +953,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Heat_Electricity_Consumption_FieldActionPerformed
 
+    // Add: checks the input, creates a new object and adds it to the list
     private void Heat_Add_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Add_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         try {
@@ -964,6 +982,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Heat_Add_Brand_ButtonActionPerformed
 
+    // Delete: asks for confirmation, then removes the brand from the list
     private void Heat_Remove_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Remove_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         int index = Heat_Brand_Selector.getSelectedIndex();
@@ -987,6 +1006,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Heat_Remove_Brand_ButtonActionPerformed
 
+    // Search: selects the first brand name containing the typed text
     private void Heat_Search_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Search_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         String txt = Heat_Brand_Field.getText().trim().toLowerCase();
@@ -1009,6 +1029,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Heat_Search_Brand_ButtonActionPerformed
 
+    // Display: loops through the ArrayList and shows all brands
     private void Heat_Display_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Display_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         if (OptionManager.heatPump.size() <= 1){
@@ -1029,6 +1050,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Heat_Saving_Text.setText(sb.toString());
     }//GEN-LAST:event_Heat_Display_Brand_ButtonActionPerformed
 
+    // File reading: reads the saved results line by line
     private void Heat_Saving_Histort_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Heat_Saving_Histort_ButtonActionPerformed
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
@@ -1050,6 +1072,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Heat_Install_FieldjTextField5ActionPerformed
 
+    // Fills the text fields with the selected brand, or clears them
     private void Wind_Brand_SelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Brand_SelectorActionPerformed
         // TODO add your handling code here:
         int index = Wind_Brand_Selector.getSelectedIndex();
@@ -1087,6 +1110,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Wind_Unit_Count_FieldActionPerformed
 
+    // Validates input, calculates through Calculable, shows and saves the result
     private void Wind_Calculate_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Calculate_ButtonActionPerformed
         // TODO add your handling code here:
         int count;
@@ -1132,6 +1156,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Wind_Electricity_Consumption_FieldActionPerformed
 
+    // Add: checks the input, creates a new object and adds it to the list
     private void Wind_Add_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Add_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         try {
@@ -1160,6 +1185,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Wind_Add_Brand_ButtonActionPerformed
 
+    // Delete: asks for confirmation, then removes the brand from the list
     private void Wind_Remove_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Remove_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         int index = Wind_Brand_Selector.getSelectedIndex();
@@ -1183,6 +1209,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Wind_Remove_Brand_ButtonActionPerformed
 
+    // Search: selects the first brand name containing the typed text
     private void Wind_Search_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Search_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         String txt = Wind_Brand_Field.getText().trim().toLowerCase();
@@ -1205,6 +1232,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Wind_Search_Brand_ButtonActionPerformed
 
+    // Display: loops through the ArrayList and shows all brands
     private void Wind_Display_Brand_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Display_Brand_ButtonActionPerformed
         // TODO add your handling code here:
         if (OptionManager.windturbine.size() <= 1){
@@ -1224,6 +1252,7 @@ public class CleanEnergyGUI extends javax.swing.JFrame {
         Wind_Saving_Text.setText(sb.toString());
     }//GEN-LAST:event_Wind_Display_Brand_ButtonActionPerformed
 
+    // File reading: reads the saved results line by line
     private void Wind_Saving_Histort_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Wind_Saving_Histort_ButtonActionPerformed
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();

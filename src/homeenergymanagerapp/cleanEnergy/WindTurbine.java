@@ -10,23 +10,30 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
+ * Wind turbine product. Extends CleanEnergyApp and implements
+ * Calculable to work out yearly savings and payback time.
  *
  * @author Alpsan Karademir
  */
+
 public class WindTurbine extends CleanEnergyApp implements Calculable {
     
+    // Fields used for the turbine data and calculation results
     private double dailyWindTime, annualKw, usedKwh, surplusKwh,savedMoney, exportIncome, yearlySaving, totalCost, paybackYears;
     private int turbineCount;
     
+    // Fixed prices per kWh: buying electricity and selling surplus to the grid
     private final double electricFee = 0.38;
     private final double exportFee = 0.15;
     
+    // super() sets the shared fields, daily wind time belongs to this class
      public WindTurbine(String name, String brand, String description, double installCost, double outputWatt, int dailyWindTime) {
          
         super(name, brand, description, installCost, outputWatt);
         this.dailyWindTime = dailyWindTime;
     }
 
+    // Getters and setters
     public double getDailyWindTime() {
         return dailyWindTime;
     }
@@ -106,7 +113,11 @@ public class WindTurbine extends CleanEnergyApp implements Calculable {
     public void setTurbineCount(int turbineCount) {
         this.turbineCount = turbineCount;
     }
-     
+    
+    // From the Calculable interface.
+    // Yearly production = kW x daily wind hours x 365 x turbine count.
+    // Used energy saves money on the bill and the surplus is sold.
+    // Payback = total install cost / yearly benefit.
     @Override
     public void calculateAnnualSavings(int count, double electricityConsumption) {
         this.turbineCount = count;
@@ -123,6 +134,7 @@ public class WindTurbine extends CleanEnergyApp implements Calculable {
         paybackYears = yearlySaving > 0 ? totalCost / yearlySaving : 0;
     }
     
+    // File writing: adds the result to the history file without deleting old ones
     public void saveTXT(String txt){
     
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("src/homeenergymanagerapp/cleanEnergy/Data/WT_Data.txt", true))) {
@@ -136,6 +148,7 @@ public class WindTurbine extends CleanEnergyApp implements Calculable {
         
     }
     
+    // From the Calculable interface. Returns the results as text for the GUI and file.
     @Override
     public String printSavings() {
         

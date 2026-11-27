@@ -7,18 +7,26 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+
 /**
+ * Heat pump product. Extends CleanEnergyApp and implements
+ * Calculable to compare its heating cost with gas.
  *
  * @author Alpsan Karademir
  */
+
 public class HeatPump extends CleanEnergyApp implements Calculable{
     
+    // Fields used for the heat pump data and calculation results   
     private double annualKw, yearlySaving, annualHeatingKwh, paybackYears, totalCost,cop,oldHeatingCost, newHeatingCost,producedHeat;
     private int unitCount;
+    
+    // Fixed assumptions: running hours per year, electricity and gas price per kWh
     private final double fullLoadHours = 1500;
     private final double electricFee = 0.38;
     private final double gasFee = 0.13; 
 
+    // super() sets the shared fields, COP belongs only to heat pumps
     public HeatPump(String name, String brand, String description,double installCost, double outputWatt, double cop) {
         
         super(name, brand, description, installCost, outputWatt);
@@ -26,6 +34,7 @@ public class HeatPump extends CleanEnergyApp implements Calculable{
         
     }
 
+    // Getters and setters
     public double getAnnualKw() {
         return annualKw;
     }
@@ -106,7 +115,10 @@ public class HeatPump extends CleanEnergyApp implements Calculable{
         this.producedHeat = producedHeat;
     }
 
-
+    // From the Calculable interface.
+    // Saving = gas heating cost - heat pump electricity cost.
+    // COP is the heat produced for each unit of electricity used.
+    // Payback = total install cost / yearly saving.
     @Override
     public void calculateAnnualSavings(int count, double heatingKwh) { 
         
@@ -122,6 +134,7 @@ public class HeatPump extends CleanEnergyApp implements Calculable{
 
     }
     
+    // File writing: adds the result to the history file without deleting old ones
     public void saveTXT(String txt){
     
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("src/homeenergymanagerapp/cleanEnergy/Data/HP_Data.txt", true))) {
@@ -135,6 +148,7 @@ public class HeatPump extends CleanEnergyApp implements Calculable{
         
     }
 
+    // From the Calculable interface. Returns the results as text for the GUI and file.
     @Override
     public String printSavings(){
         

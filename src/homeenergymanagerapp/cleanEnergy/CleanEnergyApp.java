@@ -3,24 +3,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package homeenergymanagerapp.cleanEnergy;
-import javax.swing.JOptionPane;
-import java.util.ArrayList;
+
 /**
+ * Parent class of SolarPanel, WindTurbine and HeatPump.
+ * Stores the data that all three products share and
+ * starts the Clean Energy section.
  *
  * @author Alpsan Karademir
  */
+
 public class CleanEnergyApp {
     
+    // Shared fields. They are protected so the subclasses can use them directly.
     protected String name, brand, description;
     protected double installCost, outputWatt;
     
+    // Used to load the default brands into the ArrayLists
     OptionManager optionMan = new OptionManager();
 
+    // Empty constructor, used by the main menu to open this section
     public CleanEnergyApp() {
     
     
     }
     
+    // Sets the shared fields. Subclasses call this with super().
     public CleanEnergyApp(String name, String brand, String description, double installCost, double outputWatt) {
         this.name = name;
         this.brand = brand;
@@ -29,6 +36,7 @@ public class CleanEnergyApp {
         this.outputWatt = outputWatt;
     }
 
+    // Getters and setters for the shared fields
     public String getName() {
         return name;
     }
@@ -69,6 +77,7 @@ public class CleanEnergyApp {
         this.outputWatt = outputWatt;
     }
     
+    // Loads the brands for all three products, then opens the GUI
     public void CleanEnergyApp(){
         
         optionMan.addSolarBrands();
@@ -78,6 +87,7 @@ public class CleanEnergyApp {
         
     }
 
+    // Creates the Clean Energy window and makes it visible
     public void startGUI(){
     
         CleanEnergyGUI CEGUI = new CleanEnergyGUI();

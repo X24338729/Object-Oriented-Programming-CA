@@ -9,24 +9,34 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+
 /**
+ * Creates the default brands for each product, keeps them in
+ * ArrayLists and writes them to text files.
  *
  * @author Alpsan Karademir
  */
+
 public class OptionManager {
     
+    // One ArrayList of objects for each product type.
+    // They are static so the GUI can access the same lists.
     public static ArrayList<SolarPanel> solar = new ArrayList<>();
     public static ArrayList<HeatPump> heatPump = new ArrayList<>();
     public static ArrayList<WindTurbine> windturbine = new ArrayList<>();
     
+    // Fills the solar list and saves it to SP_Brands.txt
     public void addSolarBrands(){
         
+        // Reset the list so it always matches the combo box in the GUI
         solar.clear();
         
         File outfile;
         FileWriter fw;
         BufferedWriter bw;
         
+        // Empty placeholder at index 0, because the first combo box item
+        // is "Select a brand". This keeps both indexes the same.
         SolarPanel solarBrand = new SolarPanel("","","",0,0,0);
         solar.add(solarBrand);
         SolarPanel solarBrand1 = new SolarPanel("Maxeon 6 AC","SunPower","High-efficiency monocrystalline roof panel with an integrated microinverter.",550,425,3);
@@ -41,6 +51,7 @@ public class OptionManager {
         solar.add(solarBrand5);
         SolarPanel solarBrand6 = new SolarPanel("Vertex S", "Trina Solar", "Compact design engineered for maximum residential rooftop efficiency.", 400, 430, 3);
         solar.add(solarBrand6);
+        
         
         try{
             
@@ -66,6 +77,7 @@ public class OptionManager {
         
     }
    
+    // Same steps for heat pumps, saved to HP_Brands.txt (includes COP)
     public void addHeatPumpBrands() {
         
         heatPump.clear();
@@ -89,6 +101,7 @@ public class OptionManager {
         HeatPump heatBrand6 = new HeatPump("Arotherm Split", "Viessmann", "Premium heat pump system with excellent performance and low noise.", 12500, 9000, 4.1);
         heatPump.add(heatBrand6);
 
+        // File writing: saves one brand per line, shows a message if it fails
         try{
             
             outfile = new File("src/homeenergymanagerapp/cleanEnergy/Data/HP_Brands.txt");
@@ -111,6 +124,7 @@ public class OptionManager {
         }
     }
     
+    // Same steps for wind turbines, saved to WT_Brands.txt (includes daily wind hours)
     public void addWindTurbineBrands() {
         
         windturbine.clear();
