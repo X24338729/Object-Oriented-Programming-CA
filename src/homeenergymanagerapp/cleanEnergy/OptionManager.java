@@ -20,9 +20,9 @@ public class OptionManager {
     public static ArrayList<WindTurbine> windturbine = new ArrayList<>();
     
     public void addSolarBrands(){
-        if (!solar.isEmpty()){ 
-            return;
-        }
+        
+        solar.clear();
+        
         File outfile;
         FileWriter fw;
         BufferedWriter bw;
@@ -67,9 +67,8 @@ public class OptionManager {
     }
    
     public void addHeatPumpBrands() {
-        if (!heatPump.isEmpty()) {
-            return;
-        }
+        
+        heatPump.clear();
         
         File outfile;
         FileWriter fw;
@@ -113,9 +112,8 @@ public class OptionManager {
     }
     
     public void addWindTurbineBrands() {
-        if (!windturbine.isEmpty()) {
-            return;
-        }
+        
+        windturbine.clear();
         
         File outfile;
         FileWriter fw;

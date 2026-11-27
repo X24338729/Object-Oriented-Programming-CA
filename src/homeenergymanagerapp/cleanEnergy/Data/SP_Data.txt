@@ -8,3 +8,43 @@ Total install Cost: 2200.00 €
 Yearly Benefit: 707.37 €
 Payback Years: 3.1 years
 
+Brand: Panasonic
+Panel Count: 1
+Produced: 449 kWh
+Surplus sold: 0 kWh
+Saved on bill: 170.60 €
+Export income: 0.00 €
+Total install Cost: 480.00 €
+Yearly Benefit: 170.60 €
+Payback Years: 2.8 years
+
+Brand: Panasonic
+Panel Count: 1
+Produced: 449 kWh
+Surplus sold: 0 kWh
+Saved on bill: 170.60 €
+Export income: 0.00 €
+Total install Cost: 480.00 €
+Yearly Benefit: 170.60 €
+Payback Years: 2.8 years
+
+Brand: Panasonic
+Panel Count: 1
+Produced: 449 kWh
+Surplus sold: 0 kWh
+Saved on bill: 170.60 €
+Export income: 0.00 €
+Total install Cost: 480.00 €
+Yearly Benefit: 170.60 €
+Payback Years: 2.8 years
+
+Brand: Panasonic
+Panel Count: 1
+Produced: 449 kWh
+Surplus sold: 0 kWh
+Saved on bill: 170.60 €
+Export income: 0.00 €
+Total install Cost: 480.00 €
+Yearly Benefit: 170.60 €
+Payback Years: 2.8 years
+

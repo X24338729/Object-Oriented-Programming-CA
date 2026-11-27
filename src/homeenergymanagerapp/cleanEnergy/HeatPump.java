@@ -137,7 +137,8 @@ public class HeatPump extends CleanEnergyApp implements Calculable{
 
     @Override
     public String printSavings(){
-    
-        return "Brand: " + brand + "\nUnits: " + unitCount + "\nProduced heat: " + String.format("%.0f", producedHeat) + " kWh" + "\nOld heating cost: " + String.format("%.2f", oldHeatingCost) + " €" + "\nNew heating cost: " + String.format("%.2f", newHeatingCost) + " €" + "\nYearly Saving: " + String.format("%.2f", yearlySaving) + " €" + "\nPayback Years: " + String.format("%.1f", paybackYears) + " years";
+        
+        String payback = yearlySaving > 0 ? String.format("%.1f", paybackYears) + " years" : "No payback";
+        return "Brand: " + brand + "\nUnits: " + unitCount + "\nProduced heat: " + String.format("%.0f", producedHeat) + " kWh" + "\nOld heating cost: " + String.format("%.2f", oldHeatingCost) + " €" + "\nNew heating cost: " + String.format("%.2f", newHeatingCost) + " €" + "\nYearly Saving: " + String.format("%.2f", yearlySaving) + " €" + "\nPayback Years: " + payback;
     }
 }

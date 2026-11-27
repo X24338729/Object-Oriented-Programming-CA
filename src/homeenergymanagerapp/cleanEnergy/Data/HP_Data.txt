@@ -6,3 +6,43 @@ New heating cost: 1140.00 €
 Yearly Saving: 420.00 €
 Payback Years: 100.0 years
 
+Brand: Daikin
+Units: 1
+Produced heat: 12000 kWh
+Old heating cost: 1560.00 €
+New heating cost: 1140.00 €
+Yearly Saving: 420.00 €
+Payback Years: 25.0 years
+
+Brand: Mitsubishi Electric
+Units: 1
+Produced heat: 12750 kWh
+Old heating cost: 1560.00 €
+New heating cost: 1200.00 €
+Yearly Saving: 360.00 €
+Payback Years: 27.2 years
+
+Brand: Bosch
+Units: 1
+Produced heat: 10500 kWh
+Old heating cost: 1560.00 €
+New heating cost: 1232.43 €
+Yearly Saving: 327.57 €
+Payback Years: 28.1 years
+
+Brand: Daikin
+Units: 1
+Produced heat: 12000 kWh
+Old heating cost: 1560.00 €
+New heating cost: 1140.00 €
+Yearly Saving: 420.00 €
+Payback Years: 25.0 years
+
+Brand: Daikin2
+Units: 1
+Produced heat: 12000 kWh
+Old heating cost: 1560.00 €
+New heating cost: 2280.00 €
+Yearly Saving: -720.00 €
+Payback Years: No payback
+
